@@ -236,6 +236,13 @@
     padding:4px 10px;
   }
   .class-row .txt .links a:hover{ background:var(--green-light); color:#fff; }
+  .class-row .txt .videos{ margin-top:6px; display:flex; flex-direction:column; gap:4px; }
+  .class-row .txt .videos a{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:.82rem; text-decoration:none;
+    color:var(--gray); width:fit-content;
+  }
+  .class-row .txt .videos a:hover{ color:var(--green); text-decoration:underline; }
 
   footer{
     text-align:center;
@@ -279,7 +286,7 @@
 
     <div class="progress-wrap">
       <div class="progress-track" id="progressTrack"></div>
-      <div class="progress-labels"><span>Clase 1</span><span>Clase 31</span></div>
+      <div class="progress-labels"><span>Clase 1</span><span>Clase 29</span></div>
     </div>
 
     <section>
@@ -345,53 +352,51 @@
 <script>
 const UNITS = [
   {
-    n: 1, title: "Amplificadores operacionales", range: "Clases 2 a 17", color: "#7C9A3E",
+    n: 1, title: "Amplificadores operacionales", range: "Clases 2 a 16", color: "#7C9A3E",
     classes: [
       {c:2, t:"Amplificador operacional ideal, corto virtual"},
-      {c:3, t:"Realimentación negativa y positiva, comparadores, circuitos con histéresis"},
-      {c:4, t:"Amplificador inversor y no inversor"},
+      {c:3, t:"Realimentación negativa y positiva, comparadores, circuitos con histéresis", videos:[{label:"Generador de onda triangular a partir de una onda cuadrada — comparador con histéresis desde el min. 55:30", url:"https://www.youtube.com/watch?v=_m87m70yyG4"}]},
+      {c:4, t:"Amplificador inversor y no inversor", videos:[{label:"Amplificador Inversor", url:"https://www.youtube.com/watch?v=O9qs-qSEO5k"}]},
       {c:5, t:"PSIM — Configuraciones básicas", tag:"Clase 100% PSIM"},
       {c:6, t:"Amplificador derivador e integrador"},
-      {c:7, t:"Amplificador proporcional, sumador y restador"},
-      {c:8, t:"Amplificador de instrumentación"},
-      {c:9, t:"PSIM — Derivador, integrador, sumador/restador, instrumentación · se asigna TP1", tag:"Clase 100% PSIM · TP1"},
-      {c:10, t:"Filtros activos; conversión corriente-voltaje y voltaje-corriente"},
-      {c:11, t:"Temporizadores con op-amp; sistemas de segundo orden"},
+      {c:7, t:"Amplificador proporcional, sumador y restador", videos:[{label:"Amplificador sumador restador", url:"https://www.youtube.com/watch?v=hi0WniFjJqc"}]},
+      {c:8, t:"Controlador PI analógico", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
+      {c:9, t:"PSIM — Derivador, integrador, sumador/restador, controlador PI (+ repaso de instrumentación) · se asigna TP1", tag:"Clase 100% PSIM · TP1"},
+      {c:10, t:"Filtros activos; conversión corriente-voltaje y voltaje-corriente", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
+      {c:11, t:"Temporizadores con op-amp; sistemas de segundo orden; generador de onda cuadrada y triangular", videos:[{label:"Generador de onda cuadrada", url:"https://www.youtube.com/watch?v=FruOafgJee4"},{label:"Generador de onda triangular a partir de una onda cuadrada — desde el min. 48:17", url:"https://www.youtube.com/watch?v=4qMYbLD5kNw"}]},
       {c:12, t:"Respuesta en frecuencia; diagramas de Bode"},
       {c:13, t:"PSIM — Filtros, temporizadores y generadores · se asigna TP2 · entrega TP1", tag:"Clase 100% PSIM · TP2"},
-      {c:14, t:"Op-amp real: impedancia de entrada/salida, ganancia finita"},
-      {c:15, t:"Voltajes y corrientes de offset; compensación"},
-      {c:16, t:"Respuesta en frecuencia real; producto ganancia-ancho de banda — cierre del bloque"},
-      {c:17, t:"PSIM — AO real: impedancias y ancho de banda · repaso del bloque · entrega TP2", tag:"Clase 100% PSIM"},
+      {c:14, t:"Op-amp real: impedancia de entrada/salida, ganancia finita; offset y compensación"},
+      {c:15, t:"Respuesta en frecuencia real; producto ganancia-ancho de banda; Slew Rate — cierre del bloque"},
+      {c:16, t:"PSIM — AO real: impedancias, ancho de banda y Slew Rate · repaso del bloque · entrega TP2", tag:"Clase 100% PSIM"},
     ]
   },
   {
-    n: 2, title: "Circuitos integrados especiales", range: "Clases 18 a 21", color: "#A2BF53",
+    n: 2, title: "Circuitos integrados especiales", range: "Clases 17 a 19", color: "#A2BF53",
     classes: [
-      {c:18, t:"Oscilador LM555: astable y monoestable · se asigna el proyecto final"},
-      {c:19, t:"Conversor de frecuencia a voltaje (LM2907)"},
-      {c:20, t:"Modulador de ancho de pulso (SG3524) — cierre del bloque"},
-      {c:21, t:"PSIM — 555 real y PWM", tag:"Clase 100% PSIM"},
+      {c:17, t:"Oscilador LM555: astable y monoestable · se asigna el proyecto final", videos:[{label:"Temporizador", url:"https://www.youtube.com/watch?v=9AxyGA3ywOo&list=PLhtyci7yDIgeIoiFGaHDoKIjzPQN85U-H&index=2"},{label:"Generación PWM mediante 555", url:"https://www.youtube.com/watch?v=n3BwPhnO_JE"}]},
+      {c:18, t:"Conversor de frecuencia a voltaje (LM2907) y modulador de ancho de pulso (SG3524) — cierre del bloque"},
+      {c:19, t:"PSIM — 555 real y PWM", tag:"Clase 100% PSIM"},
     ]
   },
   {
-    n: 3, title: "Diodos y rectificadores", range: "Clases 22 a 28", color: "#8FAE49",
+    n: 3, title: "Diodos y rectificadores", range: "Clases 20 a 26", color: "#8FAE49",
     classes: [
-      {c:22, t:"Física de semiconductores: bandas de energía, unión PN, ecuación de Schockley"},
-      {c:23, t:"Características eléctricas del diodo: recuperación y ruptura inversa"},
-      {c:24, t:"Diodos especiales: Schottky, fotodiodos, LED, Zener"},
-      {c:25, t:"PSIM — Diodos y Zener (recortadores)", tag:"Clase 100% PSIM"},
-      {c:26, t:"Rectificadores de media onda y onda completa; valor promedio y RMS"},
-      {c:27, t:"Filtro capacitivo, rizado; rectificadores trifásicos — cierre del bloque"},
-      {c:28, t:"PSIM — Rectificadores (media onda, onda completa, trifásico, rizado)", tag:"Clase 100% PSIM"},
+      {c:20, t:"Física de semiconductores: bandas de energía, unión PN, ecuación de Schockley"},
+      {c:21, t:"Características eléctricas del diodo: recuperación y ruptura inversa"},
+      {c:22, t:"Diodos especiales: Schottky, fotodiodos, LED, Zener"},
+      {c:23, t:"PSIM — Diodos y Zener (recortadores)", tag:"Clase 100% PSIM"},
+      {c:24, t:"Rectificadores de media onda y onda completa; valor promedio y RMS"},
+      {c:25, t:"Filtro capacitivo, rizado; rectificadores trifásicos — cierre del bloque"},
+      {c:26, t:"PSIM — Rectificadores (media onda, onda completa, trifásico, rizado)", tag:"Clase 100% PSIM"},
     ]
   },
   {
-    n: "F", title: "Cierre y sustentación", range: "Clases 29 a 31", color: "#6A6E70",
+    n: "F", title: "Cierre y sustentación", range: "Clases 27 a 29", color: "#6A6E70",
     classes: [
-      {c:29, t:"Asesoría de proyecto final en clase"},
-      {c:30, t:"Repaso general integrador (todas las unidades)"},
-      {c:31, t:"Sustentación final de proyectos"},
+      {c:27, t:"Asesoría de proyecto final en clase"},
+      {c:28, t:"Repaso general integrador (todas las unidades)"},
+      {c:29, t:"Sustentación final de proyectos"},
     ]
   },
 ];
@@ -417,6 +422,9 @@ UNITS.forEach((u, idx) => {
             <div class="links">
               ${cl.pdf ? `<a href="${cl.pdf}" target="_blank" rel="noopener">📄 PDF</a>` : ''}
               ${cl.practica ? `<a href="${cl.practica}" target="_blank" rel="noopener">🛠 Práctica</a>` : ''}
+            </div>` : ''}${cl.videos ? `
+            <div class="videos">
+              ${cl.videos.map(v => `<a href="${v.url}" target="_blank" rel="noopener">🎥 ${v.label}</a>`).join('')}
             </div>` : ''}
           </div>
         </div>
@@ -433,7 +441,7 @@ unitsEl.addEventListener('click', (e) => {
 });
 
 const track = document.getElementById('progressTrack');
-const totalClasses = 31;
+const totalClasses = 29;
 let classColor = {};
 UNITS.forEach(u => u.classes.forEach(cl => classColor[cl.c] = u.color));
 for(let i=1;i<=totalClasses;i++){
