@@ -274,13 +274,14 @@
   <div class="wrap">
 
     <div class="today-banner">
-      <div class="badge">3</div>
+      <div class="badge">4</div>
       <div>
         <p>Hoy estás aquí</p>
-        <h2>Clase 3 · Amplificador inversor y no inversor</h2>
+        <h2>Clase 4 · Falstad — Repaso de las 5 configuraciones básicas</h2>
         <div class="links">
-          <a href="clase-03/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
-          <a href="clase-03/practica.html" target="_blank" rel="noopener">🛠 Herramienta interactiva</a>
+          <a href="clase-04/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
+          <a href="clase-04/practica.html" target="_blank" rel="noopener">🛠 Herramienta interactiva</a>
+          <a href="https://www.falstad.com/circuit/circuitjs.html" target="_blank" rel="noopener">⚡ Abrir Falstad</a>
         </div>
       </div>
     </div>
@@ -363,7 +364,7 @@ const UNITS = [
     classes: [
       {c:2, t:"El amplificador operacional ideal: corto virtual y comparador", pdf:"clase-02/presentacion.pdf", practica:"clase-02/practica.html"},
       {c:3, t:"Amplificador inversor y no inversor", pdf:"clase-03/presentacion.pdf", practica:"clase-03/practica.html", videos:[{label:"Amplificador Inversor", url:"https://www.youtube.com/watch?v=O9qs-qSEO5k"}]},
-      {c:4, t:"PSIM — Configuraciones básicas", tag:"Clase 100% PSIM"},
+      {c:4, t:"Falstad — Repaso de las 5 configuraciones básicas (bloque por bloque, con prueba de escritorio)", pdf:"clase-04/presentacion.pdf", practica:"clase-04/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html"},
       {c:5, t:"Amplificador derivador e integrador"},
       {c:6, t:"Amplificador proporcional, sumador y restador", videos:[{label:"Amplificador sumador restador", url:"https://www.youtube.com/watch?v=hi0WniFjJqc"}]},
       {c:7, t:"Controlador PI analógico", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
@@ -422,12 +423,13 @@ UNITS.forEach((u, idx) => {
     </div>
     <div class="classes">
       ${u.classes.map(cl => `
-        <div class="class-row${cl.c===2?' today':''}">
+        <div class="class-row${cl.c===4?' today':''}">
           <div class="chip">C${cl.c}</div>
-          <div class="txt">${cl.t}${cl.tag ? `<br><span class="tag">${cl.tag}</span>` : ''}${(cl.pdf || cl.practica) ? `
+          <div class="txt">${cl.t}${cl.tag ? `<br><span class="tag">${cl.tag}</span>` : ''}${(cl.pdf || cl.practica || cl.falstad) ? `
             <div class="links">
               ${cl.pdf ? `<a href="${cl.pdf}" target="_blank" rel="noopener">📄 PDF</a>` : ''}
               ${cl.practica ? `<a href="${cl.practica}" target="_blank" rel="noopener">🛠 Práctica</a>` : ''}
+              ${cl.falstad ? `<a href="${cl.falstad}" target="_blank" rel="noopener">⚡ Abrir Falstad</a>` : ''}
             </div>` : ''}${cl.videos ? `
             <div class="videos">
               ${cl.videos.map(v => `<a href="${v.url}" target="_blank" rel="noopener">🎥 ${v.label}</a>`).join('')}
@@ -454,7 +456,7 @@ for(let i=1;i<=totalClasses;i++){
   const seg = document.createElement('div');
   seg.className = 'seg';
   seg.style.background = classColor[i] || '#DADBD5';
-  if(i===2){ seg.style.outline = '2px solid #1A1A1A'; seg.style.outlineOffset='1px'; }
+  if(i===4){ seg.style.outline = '2px solid #1A1A1A'; seg.style.outlineOffset='1px'; }
   track.appendChild(seg);
 }
 </script>
