@@ -274,13 +274,13 @@
   <div class="wrap">
 
     <div class="today-banner">
-      <div class="badge">5</div>
+      <div class="badge">7</div>
       <div>
         <p>Hoy estás aquí</p>
-        <h2>Clase 5 · Amplificador derivador e integrador</h2>
+        <h2>Clase 7 · Taller del Trabajo práctico 1: los tres retos resueltos paso a paso</h2>
         <div class="links">
-          <a href="clase-05/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
-          <a href="clase-05/practica.html" target="_blank" rel="noopener">🛠 Herramienta interactiva</a>
+          <a href="clase-07/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación del taller (PDF)</a>
+          <a href="https://tp1-electronica-analogica-9x4a.vercel.app/" target="_blank" rel="noopener">🧩 Entrar al trabajo práctico</a>
           <a href="https://www.falstad.com/circuit/circuitjs.html" target="_blank" rel="noopener">⚡ Abrir Falstad</a>
         </div>
       </div>
@@ -307,8 +307,8 @@
       <div class="info-grid">
         <div class="info-card">
           <h3>Plataforma de laboratorio</h3>
-          <p>PSIM</p>
-          <small>HTML y software de simulación de apoyo para entender los conceptos — PSIM en las clases 100% prácticas</small>
+          <p>Falstad y PSIM</p>
+          <small>Falstad en clase y en los trabajos prácticos; PSIM en los talleres de simulación. HTML de apoyo en cada clase</small>
         </div>
         <div class="info-card">
           <h3>Monitor del curso</h3>
@@ -375,12 +375,11 @@ const UNITS = [
     classes: [
       {c:2, t:"El amplificador operacional ideal: corto virtual y comparador", pdf:"clase-02/presentacion.pdf", practica:"clase-02/practica.html"},
       {c:3, t:"Amplificador inversor y no inversor", pdf:"clase-03/presentacion.pdf", practica:"clase-03/practica.html", videos:[{label:"Amplificador Inversor", url:"https://www.youtube.com/watch?v=O9qs-qSEO5k"}]},
-      {c:4, t:"Falstad — Repaso de las 5 configuraciones básicas (bloque por bloque, con prueba de escritorio)", pdf:"clase-04/presentacion.pdf", practica:"clase-04/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html"},
-      {c:5, t:"Amplificador derivador e integrador (deducción con Laplace)", pdf:"clase-05/presentacion.pdf", practica:"clase-05/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html"},
-      {c:5, t:"Amplificador derivador e integrador"},
-      {c:6, t:"Amplificador proporcional, sumador y restador", videos:[{label:"Amplificador sumador restador", url:"https://www.youtube.com/watch?v=hi0WniFjJqc"}]},
-      {c:7, t:"Controlador PI analógico", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
-      {c:8, t:"PSIM — Derivador, integrador, sumador/restador, controlador PI (+ repaso de instrumentación) · se asigna TP1", tag:"Clase 100% PSIM · TP1"},
+      {c:4, t:"Configuraciones básicas: amplificador inversor, no inversor, sumador y restador", pdf:"clase-04/presentacion.pdf", practica:"clase-04/practica.html", videos:[{label:"Amplificador sumador restador", url:"https://www.youtube.com/watch?v=hi0WniFjJqc"}]},
+      {c:5, t:"Amplificador derivador e integrador: deducción con Laplace y ejercicios de aplicación", pdf:"clase-05/presentacion.pdf", practica:"clase-05/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html"},
+      {c:6, t:"Taller en PSIM de las configuraciones con amplificador operacional", tag:"Taller PSIM · el video del taller está en Classroom"},
+      {c:7, t:"Taller del Trabajo práctico 1: los tres retos resueltos paso a paso (diseño desde la ecuación, circuito con falla y aplicación de instrumentación)", pdf:"clase-07/presentacion.pdf", falstad:"https://www.falstad.com/circuit/circuitjs.html", tag:"Taller · TP1"},
+      {c:8, t:"Controlador PI analógico", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
       {c:9, t:"Filtros activos; conversión corriente-voltaje y voltaje-corriente", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
       {c:10, t:"Temporizadores con op-amp; sistemas de segundo orden; generador de onda cuadrada y triangular", videos:[{label:"Comparador con histéresis — desde el min. 55:30", url:"https://www.youtube.com/watch?v=_m87m70yyG4"},{label:"Generador de onda cuadrada", url:"https://www.youtube.com/watch?v=FruOafgJee4"},{label:"Generador de onda triangular a partir de una onda cuadrada — desde el min. 48:17", url:"https://www.youtube.com/watch?v=4qMYbLD5kNw"}]},
       {c:11, t:"Respuesta en frecuencia; diagramas de Bode"},
@@ -420,6 +419,7 @@ const UNITS = [
   },
 ];
 
+const HOY = 7; // clase actual: mueve el resaltado del temario y la barra de progreso
 const unitsEl = document.getElementById('units');
 UNITS.forEach((u, idx) => {
   const div = document.createElement('div');
@@ -435,7 +435,7 @@ UNITS.forEach((u, idx) => {
     </div>
     <div class="classes">
       ${u.classes.map(cl => `
-        <div class="class-row${cl.c===4?' today':''}">
+        <div class="class-row${cl.c===HOY?' today':''}">
           <div class="chip">C${cl.c}</div>
           <div class="txt">${cl.t}${cl.tag ? `<br><span class="tag">${cl.tag}</span>` : ''}${(cl.pdf || cl.practica || cl.falstad) ? `
             <div class="links">
@@ -468,7 +468,7 @@ for(let i=1;i<=totalClasses;i++){
   const seg = document.createElement('div');
   seg.className = 'seg';
   seg.style.background = classColor[i] || '#DADBD5';
-  if(i===4){ seg.style.outline = '2px solid #1A1A1A'; seg.style.outlineOffset='1px'; }
+  if(i===HOY){ seg.style.outline = '2px solid #1A1A1A'; seg.style.outlineOffset='1px'; }
   track.appendChild(seg);
 }
 </script>
