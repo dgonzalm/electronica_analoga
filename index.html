@@ -274,14 +274,13 @@
   <div class="wrap">
 
     <div class="today-banner">
-      <div class="badge">7</div>
+      <div class="badge">9</div>
       <div>
         <p>Hoy estás aquí</p>
-        <h2>Clase 7 · Taller del Trabajo práctico 1: los tres retos resueltos paso a paso</h2>
+        <h2>Clase 9 · Controladores PI, PD y PID con AO en Simulink</h2>
         <div class="links">
-          <a href="clase-07/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación del taller (PDF)</a>
-          <a href="https://tp1-electronica-analogica-9x4a.vercel.app/" target="_blank" rel="noopener">🧩 Entrar al trabajo práctico</a>
-          <a href="https://www.falstad.com/circuit/circuitjs.html" target="_blank" rel="noopener">⚡ Abrir Falstad</a>
+          <a href="clase-09/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
+          <a href="clase-09/practicas_matlab_clase9.zip" download>🧩 Descargar las prácticas de MATLAB (.zip)</a>
         </div>
       </div>
     </div>
@@ -379,8 +378,8 @@ const UNITS = [
       {c:5, t:"Amplificador derivador e integrador: deducción con Laplace y ejercicios de aplicación", pdf:"clase-05/presentacion.pdf", practica:"clase-05/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html"},
       {c:6, t:"Taller en PSIM de las configuraciones con amplificador operacional", tag:"Taller PSIM · el video del taller está en Classroom"},
       {c:7, t:"Taller del Trabajo práctico 1: los tres retos resueltos paso a paso (diseño desde la ecuación, circuito con falla y aplicación de instrumentación)", pdf:"clase-07/presentacion.pdf", falstad:"https://www.falstad.com/circuit/circuitjs.html", tag:"Taller · TP1"},
-      {c:8, t:"Controlador PI analógico", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
-      {c:9, t:"Filtros activos; conversión corriente-voltaje y voltaje-corriente", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
+      {c:8, t:"Controlador PI analógico: síntesis por bloques y red compacta, ajuste de Kp/Ki", pdf:"clase-08/presentacion.pdf", practica:"clase-08/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
+      {c:9, t:"Controladores PI, PD y PID con amplificadores operacionales en Simulink: motor (velocidad y posición), horno y bola en la barra; sintonización con perillas", pdf:"clase-09/presentacion.pdf", matlab:"clase-09/practicas_matlab_clase9.zip", tag:"Prácticas en MATLAB · requiere Simulink, Simscape, Simscape Electrical y Simscape Multibody (R2026b)"},
       {c:10, t:"Temporizadores con op-amp; sistemas de segundo orden; generador de onda cuadrada y triangular", videos:[{label:"Comparador con histéresis — desde el min. 55:30", url:"https://www.youtube.com/watch?v=_m87m70yyG4"},{label:"Generador de onda cuadrada", url:"https://www.youtube.com/watch?v=FruOafgJee4"},{label:"Generador de onda triangular a partir de una onda cuadrada — desde el min. 48:17", url:"https://www.youtube.com/watch?v=4qMYbLD5kNw"}]},
       {c:11, t:"Respuesta en frecuencia; diagramas de Bode"},
       {c:12, t:"PSIM — Filtros, temporizadores y generadores · se asigna TP2 · entrega TP1", tag:"Clase 100% PSIM · TP2"},
@@ -419,7 +418,7 @@ const UNITS = [
   },
 ];
 
-const HOY = 7; // clase actual: mueve el resaltado del temario y la barra de progreso
+const HOY = 9; // clase actual: mueve el resaltado del temario y la barra de progreso
 const unitsEl = document.getElementById('units');
 UNITS.forEach((u, idx) => {
   const div = document.createElement('div');
@@ -437,11 +436,12 @@ UNITS.forEach((u, idx) => {
       ${u.classes.map(cl => `
         <div class="class-row${cl.c===HOY?' today':''}">
           <div class="chip">C${cl.c}</div>
-          <div class="txt">${cl.t}${cl.tag ? `<br><span class="tag">${cl.tag}</span>` : ''}${(cl.pdf || cl.practica || cl.falstad) ? `
+          <div class="txt">${cl.t}${cl.tag ? `<br><span class="tag">${cl.tag}</span>` : ''}${(cl.pdf || cl.practica || cl.falstad || cl.matlab) ? `
             <div class="links">
               ${cl.pdf ? `<a href="${cl.pdf}" target="_blank" rel="noopener">📄 PDF</a>` : ''}
               ${cl.practica ? `<a href="${cl.practica}" target="_blank" rel="noopener">🛠 Práctica</a>` : ''}
               ${cl.falstad ? `<a href="${cl.falstad}" target="_blank" rel="noopener">⚡ Abrir Falstad</a>` : ''}
+              ${cl.matlab ? `<a href="${cl.matlab}" download>🧩 Prácticas MATLAB (.zip)</a>` : ''}
             </div>` : ''}${cl.videos ? `
             <div class="videos">
               ${cl.videos.map(v => `<a href="${v.url}" target="_blank" rel="noopener">🎥 ${v.label}</a>`).join('')}
