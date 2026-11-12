@@ -111,6 +111,12 @@ details summary{cursor:pointer;font-weight:700;color:var(--accent-strong)}
 .placeholder{display:grid;place-items:center;min-height:120px;border:1.5px dashed var(--border);border-radius:8px;color:var(--text-muted);font-size:.9rem;text-align:center;padding:12px}
 footer.foot{margin-top:28px;padding-top:12px;border-top:1px solid var(--border);font-size:.8rem;color:var(--text-muted)}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+
+/* evita que los lienzos agranden la grilla (WebKit/Safari con pantallas Retina) */
+.panel{grid-template-columns:minmax(0,1fr)}
+.panel>*,.grid2>*,.grid3>*{min-width:0}
+canvas{max-width:100%;min-width:0}
+.imgs figure{min-width:0;grid-template-columns:minmax(0,1fr)}
 </style>
 
 <div class="wrap">
@@ -379,7 +385,9 @@ function spectrum(x,N,frames){const acc=new Float64Array(N/2);let used=0;const w
   if(used)for(let k=0;k<N/2;k++)acc[k]/=used;return acc;}
 
 /* ---------- gráficas ---------- */
-function setupCanvas(cv){const dpr=window.devicePixelRatio||1,w=cv.clientWidth||600,h=+cv.getAttribute("height");cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);cv.style.height=h+"px";const g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);return {g,w,h}}
+function setupCanvas(cv){const dpr=window.devicePixelRatio||1,par=cv.parentElement,ps=getComputedStyle(par);
+  let w=par.clientWidth-parseFloat(ps.paddingLeft)-parseFloat(ps.paddingRight);if(!(w>0))w=600;w=Math.floor(w);if(!cv.dataset.h)cv.dataset.h=cv.getAttribute("height");const h=+cv.dataset.h;
+  cv.style.width=w+"px";cv.style.height=h+"px";cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr);const g=cv.getContext("2d");g.setTransform(dpr,0,0,dpr,0,0);return {g,w,h}}
 const fmtTickHz=v=>v>=1e6?fmtNum(v/1e6)+"M":v>=1e3?fmtNum(v/1e3)+"k":fmtNum(v);
 function niceStep(raw){const e=10**Math.floor(Math.log10(raw)),m=raw/e;return (m<1.5?1:m<3?2:m<7?5:10)*e}
 function plot(cv,o){
