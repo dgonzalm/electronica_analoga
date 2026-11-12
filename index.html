@@ -274,13 +274,14 @@
   <div class="wrap">
 
     <div class="today-banner">
-      <div class="badge">10</div>
+      <div class="badge">11</div>
       <div>
         <p>Hoy estás aquí</p>
-        <h2>Clase 10 · Comparador con histéresis, generadores de onda y temporizador con AO</h2>
+        <h2>Clase 11 · Filtros activos de primer orden y diagramas de Bode</h2>
         <div class="links">
-          <a href="clase-10/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
-          <a href="clase-10/practicas_matlab_clase10.zip" download>🧩 Descargar las prácticas de MATLAB (.zip)</a>
+          <a href="clase-11/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
+          <a href="clase-11/practica.html" target="_blank" rel="noopener">🛠 Laboratorio de filtros</a>
+          <a href="clase-11/audio_ejemplo_filtros.mp3" download>🎵 Descargar el MP3 de ejemplo</a>
         </div>
       </div>
     </div>
@@ -381,8 +382,8 @@ const UNITS = [
       {c:8, t:"Controlador PI analógico: síntesis por bloques y red compacta, ajuste de Kp/Ki", pdf:"clase-08/presentacion.pdf", practica:"clase-08/practica.html", falstad:"https://www.falstad.com/circuit/circuitjs.html", videos:[{label:"Sistemas de primer orden", url:"https://www.youtube.com/watch?v=iYTHbQEHY7Q"},{label:"Diseño controlador PI", url:"https://www.youtube.com/watch?v=_W2UIcrmS8s&t=918s"}]},
       {c:9, t:"Controladores PI, PD y PID con amplificadores operacionales en Simulink: motor (velocidad y posición), horno y bola en la barra; sintonización con perillas", pdf:"clase-09/presentacion.pdf", matlab:"clase-09/practicas_matlab_clase9.zip", tag:"Prácticas en MATLAB · requiere Simulink, Simscape, Simscape Electrical y Simscape Multibody (R2026b)"},
       {c:10, t:"Comparador con histéresis (Schmitt inversor y no inversor), generador de onda cuadrada, generador de onda cuadrada y triangular (PWM) y temporizador con AO; aplicaciones y ejercicios", pdf:"clase-10/presentacion.pdf", matlab:"clase-10/practicas_matlab_clase10.zip", tag:"Prácticas en MATLAB · termostato, baliza, generador de funciones y luz de escalera · requiere Simulink, Simscape y Simscape Electrical (R2026b)", videos:[{label:"Comparador con histéresis — desde el min. 55:30", url:"https://www.youtube.com/watch?v=_m87m70yyG4"},{label:"Generador de onda cuadrada", url:"https://www.youtube.com/watch?v=FruOafgJee4"},{label:"Generador de onda triangular a partir de una onda cuadrada — desde el min. 48:17", url:"https://www.youtube.com/watch?v=4qMYbLD5kNw"}]},
-      {c:11, t:"Filtros activos de primer y segundo orden (Sallen-Key); conversión de corriente a voltaje y de voltaje a corriente", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
-      {c:12, t:"Sistemas de segundo orden, respuesta en frecuencia y diagramas de Bode · se asigna TP2 (tentativo)", tag:"TP2"},
+      {c:11, t:"Filtros activos de primer orden y diagramas de Bode: filtros pasivos y activos, frecuencia de corte (cómo se calcula y cómo se elige), decibeles, pasa-bajas y pasa-altas con AO; aplicaciones (sensor de temperatura, quitar el nivel DC)", pdf:"clase-11/presentacion.pdf", practica:"clase-11/practica.html", tag:"Laboratorio de filtros · qué es un filtro (señal, audio, MP3 e imagen), pasivo y activo, diseña tu filtro"},
+      {c:12, t:"Filtros de segundo orden: factor Q, Sallen-Key pasa-bajas y pasa-altas, pasa-banda MFB y rechaza-banda de 60 Hz; ecualizador de audio · se asigna TP2 (tentativo)", pdf:"clase-12/presentacion.pdf", practica:"clase-12/practica.html", tag:"TP2", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
       {c:13, t:"AO real: impedancia de entrada y de salida, ganancia finita; voltajes y corrientes de offset, compensación"},
       {c:14, t:"AO real: respuesta en frecuencia, producto ganancia-ancho de banda y Slew Rate — cierre del bloque"},
       {c:15, t:"Taller integrador del bloque de amplificadores operacionales en simulación · entrega TP2 (tentativo)", tag:"Taller · simulación"},
@@ -418,7 +419,7 @@ const UNITS = [
   },
 ];
 
-const HOY = 10; // clase actual: mueve el resaltado del temario y la barra de progreso
+const HOY = 11; // clase actual: mueve el resaltado del temario y la barra de progreso
 const unitsEl = document.getElementById('units');
 UNITS.forEach((u, idx) => {
   const div = document.createElement('div');
