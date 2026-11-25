@@ -118,81 +118,13 @@ footer.foot{margin-top:28px;padding-top:12px;border-top:1px solid var(--border);
 .panel>*,.grid2>*,.grid3>*{min-width:0}
 canvas{max-width:100%;min-width:0}
 .imgs figure{min-width:0;grid-template-columns:minmax(0,1fr)}
-/* ---------- Ejercicio integrador: consola ---------- */
+/* raíces y fracciones */
 .rad{display:inline-flex;align-items:stretch;vertical-align:middle}
 .rad::before{content:"√";padding-right:1px}
 .rad>span,.rad{white-space:nowrap}
 .rad .ri{border-top:1.5px solid currentColor;padding:0 3px;display:inline-flex;align-items:center}
-.ipanel-head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between}
-.transport{display:flex;flex-wrap:wrap;gap:10px 14px;align-items:center}
-.transport input[type=range]{flex:1 1 220px;accent-color:var(--accent);min-width:0}
-.seg{display:inline-flex;border:1.5px solid var(--accent);border-radius:8px;overflow:hidden}
-.seg button{font:700 .82rem var(--f-body);border:0;background:transparent;color:var(--accent);padding:7px 12px;cursor:pointer}
-.seg button[aria-pressed="true"]{background:var(--accent);color:var(--accent-contrast)}
-.probs{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px}
-.prob{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;font-size:.85rem;border:1px solid var(--border);border-radius:9px;padding:8px 10px;background:var(--surface-alt)}
-.prob input[type=range]{grid-column:1/-1;accent-color:var(--bad)}
-.console{--cbg:#1C2023;--cstrip:#272D31;--cline:#3B4348;--ctext:#E8EAE4;--cmuted:#9AA39F;
-  background:linear-gradient(#23282B,#191C1E);border:1px solid #0E1011;border-radius:16px;padding:14px;
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) minmax(0,.9fr);gap:10px;color:var(--ctext);box-shadow:inset 0 1px 0 #3a4146}
-@media (max-width:820px){.console{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.strip{background:var(--cstrip);border:1px solid var(--cline);border-radius:11px;padding:10px 10px 12px;display:grid;gap:8px;align-content:start;min-width:0;position:relative}
-.strip::before{content:"";position:absolute;inset:0 0 auto;height:4px;border-radius:11px 11px 0 0;background:var(--bc)}
-.strip .sh{display:grid;gap:1px;text-align:center}
-.strip .sh b{font:700 1rem var(--f-display);letter-spacing:.06em;color:var(--bc)}
-.strip .sh small{font-size:.72rem;color:var(--cmuted)}
-.knobs{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
-.knob{display:grid;justify-items:center;gap:2px;cursor:ns-resize;touch-action:none;user-select:none;-webkit-user-select:none;border-radius:10px;padding:2px 4px}
-.knob:focus-visible,.fader:focus-visible{outline:2px solid var(--bc);outline-offset:2px}
-.knob svg{width:64px;height:64px;display:block}
-.knob .kl{font:700 .66rem var(--f-mono);letter-spacing:.08em;color:var(--cmuted)}
-.knob .kv{font:700 .82rem var(--f-mono);color:var(--ctext)}
-.sread{min-height:86px;align-content:start;display:grid;grid-template-columns:auto 1fr;gap:1px 8px;margin:0;font-size:.74rem;background:#1A1E21;border:1px solid var(--cline);border-radius:7px;padding:6px 8px}
-.sread dt{color:var(--cmuted)} .sread dd{margin:0;font-family:var(--f-mono);color:var(--ctext);text-align:right;white-space:nowrap}
-.sread dd.hot{color:var(--bc);font-weight:700}
-.fz{display:flex;justify-content:center;gap:12px;align-items:stretch;height:190px}
-.fader{position:relative;width:40px;cursor:ns-resize;touch-action:none;user-select:none;-webkit-user-select:none;border-radius:6px}
-.fader .trk{position:absolute;left:50%;top:10px;bottom:10px;width:6px;margin-left:-3px;background:#0C0E0F;border-radius:3px;box-shadow:inset 0 1px 2px #000}
-.fader .tick{position:absolute;left:0;right:0;height:1px;background:#4A5257}
-.fader .tick.z{background:var(--bc);height:2px}
-.fader .cap{position:absolute;left:3px;right:3px;height:22px;margin-top:-11px;border-radius:4px;background:linear-gradient(#F4F4F2,#BDBFBA);border:1px solid #6F726E;box-shadow:0 2px 4px #0008}
-.fader .cap::after{content:"";position:absolute;left:4px;right:4px;top:10px;height:2px;background:#333}
-.vu{position:relative;width:12px;border-radius:3px;overflow:hidden;background:linear-gradient(to top,#5FB04A 0 62%,#E3B54C 62% 84%,#E0533C 84%)}
-.vu i{position:absolute;left:0;right:0;top:0;background:#111416;transition:height .05s linear}
-.vu::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(to bottom,transparent 0 5px,#111416 5px 7px)}
-.vu b{position:absolute;left:0;right:0;height:2px;background:#fff;opacity:.85;z-index:1}
-.sfoot{text-align:center;display:grid;gap:1px}
-.sfoot .gdb{font:700 .95rem var(--f-mono)}
-.sfoot small{font:.72rem var(--f-mono);color:var(--cmuted)}
-.ms{display:flex;gap:6px;justify-content:center}
-.ms button{font:700 .72rem var(--f-mono);width:34px;padding:4px 0;border-radius:5px;border:1px solid #4A5257;background:#1A1E21;color:var(--cmuted);cursor:pointer}
-.ms button[aria-pressed="true"].m{background:#B5533C;color:#fff;border-color:#B5533C}
-.ms button[aria-pressed="true"].s{background:#E3B54C;color:#1A1A1A;border-color:#E3B54C}
-.strip.master{background:#2E2A22;border-color:#4B4433}
-.sigma{font:700 2.6rem var(--f-display);color:var(--bc);text-align:center;line-height:1}
-.led{display:flex;gap:6px;align-items:center;justify-content:center;font:700 .72rem var(--f-mono);color:var(--cmuted)}
-.led i{width:11px;height:11px;border-radius:50%;background:#3A2420;box-shadow:inset 0 1px 2px #000}
-.led.on i{background:#FF4A33;box-shadow:0 0 10px #FF4A33}
-.led.on{color:#FF8A73}
-.specwrap{position:relative}
-.specread{font-family:var(--f-mono);font-size:.8rem;min-height:1.4em;color:var(--text)}
-.ischems{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-@media (max-width:900px){.ischems{grid-template-columns:minmax(0,1fr)}}
-.ischems .schem{min-width:0!important}
-.ibox{border:1px solid var(--border);border-radius:10px;padding:10px;display:grid;gap:8px;min-width:0;border-top:4px solid var(--bc)}
-.ibox h3{color:var(--text)}
-.ibox .eq{font-size:.85rem}
-.tasks{display:grid;gap:14px}
-.task header{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
-.task .tag{font:700 .72rem var(--f-mono);color:var(--accent);letter-spacing:.06em;text-transform:uppercase}
-.task ol{margin:0;padding-left:1.2em;display:grid;gap:4px;font-size:.93rem}
-.songs{display:flex;flex-wrap:wrap;gap:6px}
-.song{font-size:.8rem;border:1px solid var(--border);background:var(--surface-alt);border-radius:999px;padding:3px 10px}
-.song b{color:var(--accent)}
-pre.sheet{font:.82rem/1.45 var(--f-mono);background:var(--surface-alt);border:1px solid var(--border);border-radius:8px;padding:10px;white-space:pre-wrap;margin:0;max-height:340px;overflow:auto}
 .frac{align-items:stretch;text-align:center}
-.task label.fld,.ex label.fld{align-content:end}
-.eq .vs{white-space:nowrap}
+.ex label.fld{align-content:end}
 </style>
 
 <div class="wrap">
@@ -217,7 +149,6 @@ pre.sheet{font:.82rem/1.45 var(--f-mono);background:var(--surface-alt);border:1p
     </div>
     <div class="fgroup"><span>Práctica</span>
       <button class="chip" data-p="ej" aria-pressed="false">Ejercicios</button>
-      <button class="chip" data-p="int" aria-pressed="false">Ejercicio integrador</button>
     </div>
     <span class="fsum" id="fsum"></span>
   </div>
@@ -359,57 +290,6 @@ pre.sheet{font:.82rem/1.45 var(--f-mono);background:var(--surface-alt);border:1p
     <div id="ej-list" style="display:grid;gap:14px"></div>
   </section>
 
-  <!-- EJERCICIO INTEGRADOR -->
-  <section class="pane" id="p-int" hidden>
-    <div class="panel">
-      <div class="ipanel-head"><h2>Ejercicio integrador · Ecualizador de tres bandas</h2><span class="pill warn">Graves + Medios + Agudos → Σ</span></div>
-      <p class="note">Cada canal de la consola es un filtro de la Clase 12: <b>graves</b> = Sallen-Key pasa-bajas, <b>medios</b> = pasa-banda MFB, <b>agudos</b> = Sallen-Key pasa-altas. Las tres salidas llegan a un <b>AO sumador inversor</b> a través de una perilla P: Vo = −(Rf/PG·V<sub>G</sub> + Rf/PM·V<sub>M</sub> + Rf/PA·V<sub>A</sub>). Al girar una perilla el laboratorio recalcula las resistencias del circuito y tú escuchas el resultado.</p>
-      <div class="row">
-        <button class="btn" id="q-demo">Pista de prueba (cumbia sintética)</button>
-        <label class="btn ghost" for="q-file" style="cursor:pointer">Cargar MP3…</label><input type="file" id="q-file" accept="audio/*" hidden>
-        <span class="status" id="q-status" aria-live="polite">Carga una canción o usa la pista de prueba.</span>
-      </div>
-      <div class="transport">
-        <button class="btn" id="q-play" disabled>▶ Reproducir</button>
-        <span class="mono note" id="q-time">0:00 / 0:00</span>
-        <input type="range" id="q-seek" min="0" max="1000" value="0" step="1" aria-label="Posición en la canción" disabled>
-        <label class="row note"><input type="checkbox" id="q-loop" checked> Repetir</label>
-        <div class="seg" role="group" aria-label="Comparar"><button id="q-a" aria-pressed="false">A · Original</button><button id="q-b" aria-pressed="true">B · Ecualizada</button></div>
-      </div>
-      <div class="probs">
-        <label class="prob"><input type="checkbox" id="q-hum"><span><b>Zumbido de 60 Hz</b> (y armónicos 120, 180 Hz): tierra mal conectada en la tarima</span><input type="range" id="q-humv" min="0" max="1" step="0.01" value="0.5" aria-label="Nivel del zumbido"></label>
-        <label class="prob"><input type="checkbox" id="q-hiss"><span><b>Siseo de disco viejo</b> (ruido por encima de 4 kHz)</span><input type="range" id="q-hissv" min="0" max="1" step="0.01" value="0.5" aria-label="Nivel del siseo"></label>
-        <div class="prob" style="grid-template-columns:1fr"><span class="note" style="margin:0"><b>Ajustes rápidos</b></span><div class="row" id="q-presets"></div></div>
-      </div>
-    </div>
-
-    <div class="console" id="console" aria-label="Consola de ecualización"></div>
-
-    <div class="panel">
-      <div class="ipanel-head"><h2>La canción y los filtros sobre el mismo eje</h2>
-        <div class="legend"><span><i style="background:var(--in)"></i>espectro de entrada</span><span><i style="background:var(--out)"></i>espectro de salida</span><span><i style="background:#3F7FE0"></i>graves</span><span><i style="background:#7C9A3E"></i>medios</span><span><i style="background:#D98A1C"></i>agudos</span><span><i style="background:var(--text)"></i>respuesta total (suma)</span></div></div>
-      <canvas class="scope" id="q-spec" height="330"></canvas>
-      <div class="specread" id="q-read">Pasa el cursor sobre la gráfica para leer la frecuencia, el nivel de la canción y la ganancia de cada banda.</div>
-      <p class="note">Eje izquierdo: nivel de la canción (dB). Eje derecho: ganancia de los filtros (dB), ya multiplicada por la perilla de cada canal. La curva negra es la suma con los signos reales del circuito: por eso cerca de los cruces aparecen pequeñas ondulaciones.</p>
-    </div>
-
-    <div class="panel">
-      <div class="ipanel-head"><h2>Lo que pasa dentro de la consola</h2><span class="note">Los valores cambian en vivo con las perillas</span></div>
-      <div class="ischems" id="q-schems"></div>
-    </div>
-
-    <div class="panel">
-      <div class="ipanel-head"><h2>Eres productor musical: los encargos</h2><span class="note">Tolerancia ±3 %</span></div>
-      <p class="note">Busca la canción sugerida (o una parecida de tu gusto) en MP3, cárgala arriba y resuelve el encargo: detecta el problema en el espectro, calcula las resistencias, ajusta la consola y escucha A/B. Los valores de la consola: graves con C1 = 47 nF, C2 = 22 nF y R1 = R2 = R; medios con C = 10 nF y ganancia −1; agudos con C1 = C2 = 4,7 nF y R2 = 2·R1; sumador con Rf = 10 kΩ.</p>
-      <div class="tasks" id="q-tasks"></div>
-      <article class="panel task">
-        <header><span class="tag">Entrega</span><h3>Hoja de diseño de tu mezcla</h3></header>
-        <p class="note">Copia los valores actuales de la consola (frecuencias, ganancias y todas las resistencias) para pegarlos en tu informe.</p>
-        <div class="row"><button class="btn" id="q-sheet">Generar hoja de diseño</button><button class="btn ghost" id="q-copy" disabled>Copiar</button><span class="status" id="q-copyst"></span></div>
-        <pre class="sheet" id="q-sheetbox" hidden></pre>
-      </article>
-    </div>
-  </section>
 
 
   <footer class="foot">Universidad Nacional de Colombia · Electrónica Analógica · Prof. Daniel González Montoya · dgonzalm@unal.edu.co</footer>
@@ -891,371 +771,17 @@ function renderExercises(){const box=$("#ej-list");box.innerHTML="";let n=0;
 document.querySelectorAll("[data-ej]").forEach(b=>b.onclick=()=>{ejSel=b.dataset.ej;document.querySelectorAll("[data-ej]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));renderExercises();});
 $("#ej-new").onclick=()=>{EXR=rand(Math.floor(Math.random()*1e9));newExercises();};
 
-/* ---------- Ejercicio integrador: ecualizador de tres bandas ---------- */
-const QC={Rf:10e3,C1g:47e-9,C2g:22e-9,Cm:10e-9,Ca:4.7e-9};
-const QLO=0.5*Math.sqrt(QC.C1g/QC.C2g),QHI=Math.SQRT1_2;
-const BC={lo:"#3F7FE0",mid:"#7C9A3E",hi:"#D98A1C",ms:"#F2D17A"};
-const BCD={lo:"#6EA8FF",mid:"#A2BF53",hi:"#FFAD3B",ms:"#F2D17A"};
-const QS={lo:{f0:250,g:0,m:false,s:false},mid:{f0:1000,Q:1,g:0,m:false,s:false},hi:{f0:4000,g:0,m:false,s:false},vol:0,mode:"B",hum:false,humv:.5,hiss:false,hissv:.5};
-const GOFF=-30;
-const kOf=g=>g<=GOFF+1e-9?0:10**(g/20);
-function qCalc(){
-  const lo={R:1/(PI2*QS.lo.f0*Math.sqrt(QC.C1g*QC.C2g)),Q:QLO};
-  const Qm=QS.mid.Q,R3=2*Qm/(PI2*QS.mid.f0*QC.Cm),R1=R3/2,mid={R3,R1,R2:R1/(2*Qm*Qm-1),Q:Qm,BW:QS.mid.f0/Qm};
-  const R1h=1/(PI2*QS.hi.f0*QC.Ca*Math.SQRT2),hi={R1:R1h,R2:2*R1h,Q:QHI};
-  const solo=["lo","mid","hi"].some(b=>QS[b].s),k={};
-  for(const b of ["lo","mid","hi"]){const on=!QS[b].m&&(!solo||QS[b].s);k[b]=on?kOf(QS[b].g):0;}
-  return {lo,mid,hi,k,P:{lo:QC.Rf/kOf(QS.lo.g),mid:QC.Rf/kOf(QS.mid.g),hi:QC.Rf/kOf(QS.hi.g)}};
-}
-/* respuestas del circuito (complejas): graves +H_lp, medios −H_bp (MFB), agudos H_hp; el sumador invierte todo */
-function cdiv(a,b){const d=b[0]*b[0]+b[1]*b[1];return [(a[0]*b[0]+a[1]*b[1])/d,(a[1]*b[0]-a[0]*b[1])/d]}
-function bandH(b,f){const f0=QS[b].f0,Q=b==="lo"?QLO:b==="hi"?QHI:QS.mid.Q,x=f/f0,D=[1-x*x,x/Q];
-  if(b==="lo")return cdiv([1,0],D);if(b==="mid")return cdiv([0,-x/Q],D);return cdiv([-x*x,0],D);}
-function totalH(f,c){let re=0,im=0;for(const b of ["lo","mid","hi"]){if(!c.k[b])continue;const h=bandH(b,f);re-=c.k[b]*h[0];im-=c.k[b]*h[1];}return Math.hypot(re,im)}
-
-/* ---------- controles: perilla y fader ---------- */
-function arcPath(r,a0,a1){const p=a=>[32+r*Math.sin(a*Math.PI/180),32-r*Math.cos(a*Math.PI/180)];const [x0,y0]=p(a0),[x1,y1]=p(a1);
-  return `M${x0.toFixed(2)},${y0.toFixed(2)} A${r},${r} 0 ${a1-a0>180?1:0} 1 ${x1.toFixed(2)},${y1.toFixed(2)}`}
-function makeKnob(o){
-  const el=document.createElement("div");el.className="knob";el.tabIndex=0;el.setAttribute("role","slider");el.setAttribute("aria-label",o.aria);
-  el.innerHTML=`<svg viewBox="0 0 64 64" aria-hidden="true"><path d="${arcPath(28,-135,135)}" stroke="#3B4348" stroke-width="4" fill="none" stroke-linecap="round"/><path class="va" stroke="${o.color}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="32" cy="32" r="21" fill="#15181A" stroke="#4A5257" stroke-width="1.5"/><line class="pt" x1="32" y1="32" x2="32" y2="14" stroke="#F2F2F2" stroke-width="3" stroke-linecap="round"/></svg><span class="kv"></span><span class="kl">${o.label}</span>`;
-  const toV=t=>o.round(o.log?o.min*(o.max/o.min)**t:o.min+(o.max-o.min)*t),toT=v=>clamp(o.log?Math.log(v/o.min)/Math.log(o.max/o.min):(v-o.min)/(o.max-o.min),0,1);
-  let t=toT(o.get());
-  const paint=()=>{const v=o.get();t=toT(v);const a=-135+270*t;el.querySelector(".va").setAttribute("d",t>0.002?arcPath(28,-135,a):"");
-    el.querySelector(".pt").setAttribute("transform",`rotate(${a} 32 32)`);el.querySelector(".kv").textContent=o.fmt(v);
-    el.setAttribute("aria-valuemin",o.min);el.setAttribute("aria-valuemax",o.max);el.setAttribute("aria-valuenow",v);el.setAttribute("aria-valuetext",o.fmt(v));};
-  const setT=nt=>{t=clamp(nt,0,1);o.set(toV(t));qChanged();};
-  let y0=0,t0=0;
-  el.addEventListener("pointerdown",e=>{el.setPointerCapture(e.pointerId);y0=e.clientY;t0=t;el.focus();e.preventDefault();});
-  el.addEventListener("pointermove",e=>{if(!el.hasPointerCapture(e.pointerId))return;setT(t0+(y0-e.clientY)/(e.shiftKey?700:180));});
-  el.addEventListener("wheel",e=>{e.preventDefault();setT(t-Math.sign(e.deltaY)*(e.shiftKey?.005:.02));},{passive:false});
-  el.addEventListener("keydown",e=>{const st=e.shiftKey?.1:.01,m={ArrowUp:st,ArrowRight:st,ArrowDown:-st,ArrowLeft:-st,PageUp:.1,PageDown:-.1};
-    if(e.key in m){setT(t+m[e.key]);e.preventDefault();}else if(e.key==="Home"){setT(0);e.preventDefault();}else if(e.key==="End"){setT(1);e.preventDefault();}});
-  el.addEventListener("dblclick",()=>{o.set(o.def);qChanged();});
-  el.paint=paint;paint();return el;
-}
-function makeFader(o){
-  const el=document.createElement("div");el.className="fader";el.tabIndex=0;el.setAttribute("role","slider");el.setAttribute("aria-label",o.aria);el.setAttribute("aria-orientation","vertical");
-  const H=190,top=10,span=H-20,yOf=g=>top+span*(1-(g-GOFF)/(o.max-GOFF));
-  el.innerHTML=`<div class="trk"></div>${[o.max,6,0,-6,-12,-18,-24,GOFF].filter(v=>v<=o.max).map(v=>`<div class="tick${v===0?" z":""}" style="top:${yOf(v)}px"></div>`).join("")}<div class="cap"></div>`;
-  const paint=()=>{const g=o.get();el.querySelector(".cap").style.top=yOf(g)+"px";el.setAttribute("aria-valuemin",GOFF);el.setAttribute("aria-valuemax",o.max);el.setAttribute("aria-valuenow",g);el.setAttribute("aria-valuetext",g<=GOFF?"apagado":fmtDb(g));};
-  const setG=g=>{o.set(Math.round(clamp(g,GOFF,o.max)*2)/2);qChanged();};
-  const fromY=e=>{const r=el.getBoundingClientRect();return GOFF+(o.max-GOFF)*(1-(e.clientY-r.top-top)/span)};
-  let drag=null;
-  el.addEventListener("pointerdown",e=>{el.setPointerCapture(e.pointerId);el.focus();e.preventDefault();const onCap=e.target.classList.contains("cap");
-    drag=onCap?{y:e.clientY,g:o.get()}:null;if(!onCap)setG(fromY(e));});
-  el.addEventListener("pointermove",e=>{if(!el.hasPointerCapture(e.pointerId))return;if(drag)setG(drag.g+(drag.y-e.clientY)/span*(o.max-GOFF)*(e.shiftKey?.25:1));else setG(fromY(e));});
-  el.addEventListener("wheel",e=>{e.preventDefault();setG(o.get()-Math.sign(e.deltaY)*(e.shiftKey?.5:1));},{passive:false});
-  el.addEventListener("keydown",e=>{const st=e.shiftKey?3:1,m={ArrowUp:st,ArrowRight:st,ArrowDown:-st,ArrowLeft:-st,PageUp:6,PageDown:-6};
-    if(e.key in m){setG(o.get()+m[e.key]);e.preventDefault();}else if(e.key==="Home"){setG(GOFF);e.preventDefault();}else if(e.key==="End"){setG(o.max);e.preventDefault();}});
-  el.addEventListener("dblclick",()=>setG(0));
-  el.paint=paint;paint();return el;
-}
-const fmtDb=g=>(g>0?"+":g<0?"−":"")+fmtNum(Math.abs(g),3)+" dB";
-const rHz=v=>v<100?Math.round(v):v<1000?Math.round(v/5)*5:v<5000?Math.round(v/10)*10:Math.round(v/50)*50;
-const fmtF=v=>v>=1000?fmtNum(v/1000,3)+" kHz":Math.round(v)+" Hz";
-
-/* ---------- consola ---------- */
-let qBuilt=false;const QK=[];
-function rd(id,dt){return `<dt>${dt}</dt><dd id="${id}"></dd>`}
-function buildConsole(){
-  const box=$("#console");box.innerHTML="";QK.length=0;
-  const strips=[["lo","GRAVES","Sallen-Key pasa-bajas · 2.º orden"],["mid","MEDIOS","Pasa-banda MFB · 2.º orden"],["hi","AGUDOS","Sallen-Key pasa-altas · 2.º orden"]];
-  for(const [b,name,sub] of strips){
-    const s=document.createElement("div");s.className="strip";s.style.setProperty("--bc",BCD[b]);
-    s.innerHTML=`<div class="sh"><b>${name}</b><small>${sub}</small></div><div class="knobs"></div>
-      <dl class="sread">${b==="lo"?rd("r-lo-R","R1 = R2")+rd("r-lo-Q","Q"):b==="mid"?rd("r-mid-R3","R3")+rd("r-mid-R1","R1")+rd("r-mid-R2","R2")+rd("r-mid-BW","BW"):rd("r-hi-R1","R1")+rd("r-hi-R2","R2 = 2·R1")}</dl>
-      <div class="fz"><div class="vu" id="vu-${b}"><i></i><b></b></div></div>
-      <div class="sfoot"><span class="gdb" id="g-${b}"></span><small id="p-${b}"></small></div>
-      <div class="ms"><button class="m" data-b="${b}" aria-pressed="false" title="Silenciar el canal (abre la perilla P)">M</button><button class="s" data-b="${b}" aria-pressed="false" title="Escuchar solo este canal">S</button></div>`;
-    const kn=s.querySelector(".knobs");
-    const range=b==="lo"?[40,500]:b==="mid"?[250,4000]:[1500,12000];
-    const k1=makeKnob({label:"f0",aria:`Frecuencia de ${name.toLowerCase()}`,min:range[0],max:range[1],log:true,round:rHz,fmt:fmtF,color:BCD[b],def:{lo:250,mid:1000,hi:4000}[b],get:()=>QS[b].f0,set:v=>QS[b].f0=v});
-    kn.appendChild(k1);QK.push(k1);
-    if(b==="mid"){const k2=makeKnob({label:"Q",aria:"Factor de calidad de medios",min:.8,max:5,log:true,round:v=>Math.round(v*20)/20,fmt:v=>fmtNum(v,3),color:BCD[b],def:1,get:()=>QS.mid.Q,set:v=>QS.mid.Q=v});kn.appendChild(k2);QK.push(k2);}
-    const fd=makeFader({aria:`Ganancia de ${name.toLowerCase()}`,max:12,get:()=>QS[b].g,set:v=>QS[b].g=v});s.querySelector(".fz").prepend(fd);QK.push(fd);
-    box.appendChild(s);
-  }
-  const m=document.createElement("div");m.className="strip master";m.style.setProperty("--bc",BCD.ms);
-  m.innerHTML=`<div class="sh"><b>SUMADOR</b><small>AO inversor · Rf = 10 kΩ</small></div><div class="sigma">Σ</div>
-    <dl class="sread">${rd("r-kg","k graves")+rd("r-km","k medios")+rd("r-ka","k agudos")}</dl>
-    <div class="led" id="q-clip"><i></i>AO SATURADO</div>
-    <div class="fz"><div class="vu" id="vu-sum"><i></i><b></b></div></div>
-    <div class="sfoot"><span class="gdb" id="g-vol"></span><small>volumen del parlante<br>(después del AO)</small></div>`;
-  const fv=makeFader({aria:"Volumen de salida",max:6,get:()=>QS.vol,set:v=>QS.vol=v});m.querySelector(".fz").prepend(fv);QK.push(fv);
-  box.appendChild(m);
-  box.querySelectorAll(".ms button").forEach(bt=>bt.onclick=()=>{const b=bt.dataset.b,key=bt.classList.contains("m")?"m":"s";QS[b][key]=!QS[b][key];qChanged();});
-  qBuilt=true;
-}
-const kTxt=k=>k===0?"0 (abierta)":fmtNum(k,3);
-function paintConsole(c){
-  QK.forEach(k=>k.paint());
-  $("#r-lo-R").textContent=fmtSI(c.lo.R,"Ω");$("#r-lo-Q").textContent=fmtNum(c.lo.Q,3);
-  $("#r-mid-R3").textContent=fmtSI(c.mid.R3,"Ω");$("#r-mid-R1").textContent=fmtSI(c.mid.R1,"Ω");$("#r-mid-R2").textContent=fmtSI(c.mid.R2,"Ω");$("#r-mid-BW").textContent=fmtF(c.mid.BW);
-  $("#r-hi-R1").textContent=fmtSI(c.hi.R1,"Ω");$("#r-hi-R2").textContent=fmtSI(c.hi.R2,"Ω");
-  for(const b of ["lo","mid","hi"]){const g=QS[b].g;$("#g-"+b).textContent=g<=GOFF?"apagado":fmtDb(g);
-    $("#p-"+b).textContent=g<=GOFF?"P → ∞ (abierta)":`P = ${fmtSI(c.P[b],"Ω")} · k = ${fmtNum(kOf(g),3)}`;
-    document.querySelectorAll(`.ms button[data-b="${b}"]`).forEach(bt=>bt.setAttribute("aria-pressed",String(QS[b][bt.classList.contains("m")?"m":"s"])));}
-  $("#r-kg").textContent=kTxt(c.k.lo);$("#r-km").textContent=kTxt(c.k.mid);$("#r-ka").textContent=kTxt(c.k.hi);
-  $("#g-vol").textContent=QS.vol<=GOFF?"apagado":fmtDb(QS.vol);
-  ["#r-lo-R","#r-mid-R3","#r-hi-R1"].forEach(s=>$(s).classList.add("hot"));
-}
-
-/* ---------- audio ---------- */
-let QA=null,qBuf=null,qSrc=null,qPlaying=false,qOffset=0,qStartAt=0,qName="",qRaf=0,qClipT=0,qSpecIn=null,qSpecOut=null;
-function qAudio(){
-  if(QA)return QA;const ctx=ac();const N=n=>ctx.createGain(n);
-  const A={inBus:ctx.createGain(),humG:ctx.createGain(),hissG:ctx.createGain(),sum:ctx.createGain(),wet:ctx.createGain(),dry:ctx.createGain(),mix:ctx.createGain(),master:ctx.createGain()};
-  A.inBus.gain.value=.5;A.humG.gain.value=0;A.hissG.gain.value=0;
-  for(const [f,a] of [[60,1],[120,.55],[180,.3]]){const o=ctx.createOscillator();o.frequency.value=f;const g=ctx.createGain();g.gain.value=a;o.connect(g).connect(A.humG);o.start();}
-  const nb=ctx.createBuffer(1,ctx.sampleRate*2,ctx.sampleRate),nd=nb.getChannelData(0),R=rand(11);for(let i=0;i<nd.length;i++)nd[i]=gauss(R)*.5;
-  const ns=ctx.createBufferSource();ns.buffer=nb;ns.loop=true;const nh=ctx.createBiquadFilter();nh.type="highpass";nh.frequency.value=4500;nh.Q.value=0;ns.connect(nh).connect(A.hissG);ns.start();
-  A.humG.connect(A.inBus);A.hissG.connect(A.inBus);
-  const an=(n,s)=>{const a=ctx.createAnalyser();a.fftSize=n;a.smoothingTimeConstant=s;return a};
-  A.anIn=an(8192,.8);A.anOut=an(8192,.8);A.anSum=an(2048,0);
-  A.inBus.connect(A.anIn);
-  A.f={lo:ctx.createBiquadFilter(),mid:ctx.createBiquadFilter(),hi:ctx.createBiquadFilter()};A.f.lo.type="lowpass";A.f.mid.type="bandpass";A.f.hi.type="highpass";
-  A.g={};A.an={};
-  for(const b of ["lo","mid","hi"]){A.g[b]=ctx.createGain();A.an[b]=an(1024,0);A.inBus.connect(A.f[b]).connect(A.g[b]);A.g[b].connect(A.an[b]);A.g[b].connect(A.sum);}
-  A.sum.connect(A.anSum);
-  const sh=ctx.createWaveShaper(),cv=new Float32Array(2049);for(let i=0;i<cv.length;i++)cv[i]=i/1024-1;sh.curve=cv;sh.oversample="2x";
-  A.sum.connect(sh).connect(A.wet);A.inBus.connect(A.dry);A.wet.connect(A.mix);A.dry.connect(A.mix);A.mix.connect(A.anOut);A.mix.connect(A.master).connect(ctx.destination);
-  QA=A;qApply();return A;
-}
-function qApply(){
-  if(!QA)return;const c=qCalc(),t=AC.currentTime,set=(p,v)=>p.setTargetAtTime(v,t,.015);
-  set(QA.f.lo.frequency,QS.lo.f0);set(QA.f.lo.Q,20*Math.log10(QLO));
-  set(QA.f.mid.frequency,QS.mid.f0);set(QA.f.mid.Q,QS.mid.Q);
-  set(QA.f.hi.frequency,QS.hi.f0);set(QA.f.hi.Q,20*Math.log10(QHI));
-  /* signos del circuito: Vo = −(kG·H_lp) − kM·(−H_bp) − kA·H_hp */
-  set(QA.g.lo.gain,-c.k.lo);set(QA.g.mid.gain,c.k.mid);set(QA.g.hi.gain,-c.k.hi);
-  set(QA.wet.gain,QS.mode==="B"?1:0);set(QA.dry.gain,QS.mode==="A"?1:0);
-  set(QA.master.gain,QS.vol<=GOFF?0:1.5*10**(QS.vol/20));
-  set(QA.humG.gain,qPlaying&&QS.hum?.12*QS.humv:0);set(QA.hissG.gain,qPlaying&&QS.hiss?.18*QS.hissv:0);
-}
-function qStatus(t,err){const s=$("#q-status");s.textContent=t;s.classList.toggle("err",!!err)}
-function qDemo(){const ctx=ac(),fs=ctx.sampleRate,bpm=96,beat=60/bpm,bars=8,N=Math.floor(fs*beat*4*bars),L=new Float32Array(N),Rr=new Float32Array(N),R=rand(5);
-  const bass=[45,45,52,52,50,50,52,47],mel=[69,72,74,76,74,72,69,67,69,72,76,79,76,74,72,74],midi=n=>440*2**((n-69)/12);
-  const add=(i,vl,vr)=>{if(i<N){L[i]+=vl;Rr[i]+=vr;}};
-  for(let b=0;b<bars*4;b++){const t0=Math.floor(b*beat*fs);
-    if(b%2===0){for(let i=0;i<fs*.35;i++){const t=i/fs,f=45+80*Math.exp(-t*30),ph=PI2*(45*t+80*(1-Math.exp(-t*30))/30);add(t0+i,.0+.75*Math.sin(ph)*Math.exp(-t*9),.75*Math.sin(ph)*Math.exp(-t*9));}}
-    const nb=bass[Math.floor(b/4)%bass.length]-12,fb=midi(nb);
-    for(const off of [0,.5]){const s=t0+Math.floor(off*beat*fs);for(let i=0;i<fs*beat*.48;i++){const t=i/fs,e=Math.min(1,t*200)*Math.exp(-t*5),v=(.5*Math.sin(PI2*fb*t)+.18*Math.sin(PI2*2*fb*t))*e;add(s+i,v,v);}}
-    for(let q=0;q<4;q++){const s=t0+Math.floor(q*beat/4*fs);let p=0,pp=0;const amp=q%2?.16:.24;for(let i=0;i<fs*.07;i++){const n=gauss(R),hpv=n-p;p=n;const h2=hpv-pp;pp=hpv;const e=Math.min(1,i/(fs*.004))*Math.exp(-i/(fs*.022));add(s+i,amp*h2*e*.8,amp*h2*e*1.1);}}
-  }
-  for(let j=0;j<bars*2;j++){const s=Math.floor(j*beat*2*fs),f=midi(mel[j%mel.length]);let ph=0;
-    for(let i=0;i<fs*beat*1.9;i++){const t=i/fs,vib=1+.004*Math.sin(PI2*5.5*t),e=Math.min(1,t*25)*(t>beat*1.6?Math.max(0,1-(t-beat*1.6)*8):1);ph+=PI2*f*vib/fs;
-      let v=0;for(let h=1;h<=9;h+=2)v+=Math.sin(h*ph)/(h*1.1);v+=.25*Math.sin(2*ph);v*=.13*e;add(s+i,v*.8,v*1.1);}}
-  let pk=0;for(let i=0;i<N;i++)pk=Math.max(pk,Math.abs(L[i]),Math.abs(Rr[i]));const g=.9/pk;for(let i=0;i<N;i++){L[i]*=g;Rr[i]*=g;}
-  const b=ctx.createBuffer(2,N,fs);b.copyToChannel(L,0);b.copyToChannel(Rr,1);qSetBuf(b,"Pista de prueba: cumbia sintética (bajo, guacharaca y clarinete)");}
-function qSetBuf(b,name){qPause();qBuf=b;qName=name;qOffset=0;qAudio();["#q-play","#q-seek"].forEach(s=>$(s).disabled=false);
-  qStatus(`Lista: ${name} (${qClock(b.duration)}).`);qTime();}
-function qClock(s){s=Math.max(0,s);return Math.floor(s/60)+":"+String(Math.floor(s%60)).padStart(2,"0")}
-function qPos(){if(!qBuf)return 0;if(!qPlaying)return qOffset;let p=AC.currentTime-qStartAt;if($("#q-loop").checked)p%=qBuf.duration;return Math.min(p,qBuf.duration)}
-function qTime(){const p=qPos(),d=qBuf?qBuf.duration:0;$("#q-time").textContent=`${qClock(p)} / ${qClock(d)}`;if(d&&!qSeeking)$("#q-seek").value=Math.round(p/d*1000);}
-let qSeeking=false;
-function qPlay(){if(!qBuf)return;const ctx=ac();if(ctx.state==="suspended")ctx.resume();qAudio();stopAudio();
-  const s=ctx.createBufferSource();s.buffer=qBuf;s.loop=$("#q-loop").checked;s.connect(QA.inBus);
-  if(qOffset>=qBuf.duration)qOffset=0;s.start(0,qOffset);qStartAt=ctx.currentTime-qOffset;qSrc=s;qPlaying=true;
-  s.onended=()=>{if(qSrc===s){qPlaying=false;qSrc=null;qOffset=0;qApply();qUI();}};
-  qApply();qUI();cancelAnimationFrame(qRaf);qLoop();}
-function qPause(){if(!qPlaying){return}qOffset=qPos();qPlaying=false;const s=qSrc;qSrc=null;try{s.stop()}catch(e){}qApply();qUI();}
-function qUI(){$("#q-play").textContent=qPlaying?"❚❚ Pausa":"▶ Reproducir";qTime();}
-function vuSet(id,an,buf){an.getFloatTimeDomainData(buf);let pk=0;for(let i=0;i<buf.length;i++)pk=Math.max(pk,Math.abs(buf[i]));
-  const d=db(pk),pc=clamp((d+48)/54,0,1);const el=document.getElementById(id);el.querySelector("i").style.height=((1-pc)*100)+"%";
-  const pkEl=el.querySelector("b"),ph=+(el.dataset.ph||0),hold=Math.max(pc,ph-.012);el.dataset.ph=hold;pkEl.style.bottom=(hold*100)+"%";return pk;}
-const qTD=new Float32Array(2048);
-function qLoop(){
-  if(!QA)return;
-  if(qPlaying){
-    for(const b of ["lo","mid","hi"])vuSet("vu-"+b,QA.an[b],qTD.subarray(0,1024));
-    const pk=vuSet("vu-sum",QA.anSum,qTD);if(pk>=.999)qClipT=performance.now();
-    $("#q-clip").classList.toggle("on",performance.now()-qClipT<450);
-    qSpecIn=qSpecIn||new Float32Array(QA.anIn.frequencyBinCount);qSpecOut=qSpecOut||new Float32Array(QA.anOut.frequencyBinCount);
-    QA.anIn.getFloatFrequencyData(qSpecIn);QA.anOut.getFloatFrequencyData(qSpecOut);qTime();
-  }else{["lo","mid","hi","sum"].forEach(b=>{const el=document.getElementById("vu-"+b);if(el){el.querySelector("i").style.height="100%";el.dataset.ph=0;el.querySelector("b").style.bottom="0%";}});$("#q-clip").classList.remove("on");}
-  drawQ();
-  if(qPlaying)qRaf=requestAnimationFrame(qLoop);
-}
-
-/* ---------- espectro + Bode ---------- */
-let qCursor=null,qAx=null;
-const NOTE=["Do","Do#","Re","Re#","Mi","Fa","Fa#","Sol","Sol#","La","La#","Si"];
-function noteOf(f){const n=Math.round(12*Math.log2(f/440)+69);if(n<12||n>131)return "";return NOTE[n%12]+(Math.floor(n/12)-1)}
-function drawQ(){
-  const cv=$("#q-spec");if(!cv||$("#p-int").hidden)return;
-  const {g,w,h}=setupCanvas(cv),L=48,Rm=44,T=14,B=28,pw=w-L-Rm,ph=h-T-B,x0=20,x1=20000;
-  const X=f=>L+pw*Math.log10(f/x0)/Math.log10(x1/x0),Fx=px=>x0*(x1/x0)**((px-L)/pw);
-  const G0=-36,G1=18,Yg=v=>T+ph*(1-(v-G0)/(G1-G0)),S=v=>(v+40)*54/90,Ys=v=>Yg(S(v));
-  const col={grid:css("--grid"),muted:css("--text-muted"),fg:css("--text"),inc:css("--in"),out:css("--out")};
-  const dark=matchMedia("(prefers-color-scheme: dark)").matches&&document.documentElement.dataset.theme!=="light"||document.documentElement.dataset.theme==="dark";
-  const BB=dark?BCD:BC;
-  g.clearRect(0,0,w,h);g.font="11px "+css("--f-mono");g.lineWidth=1;
-  for(let e=1;e<=4;e++)for(let m=1;m<10;m++){const v=m*10**e;if(v<x0||v>x1)continue;const px=X(v);g.strokeStyle=col.grid;g.globalAlpha=m===1||m===2&&e===1?1:.45;g.beginPath();g.moveTo(px,T);g.lineTo(px,T+ph);g.stroke();g.globalAlpha=1;
-    if(m===1||m===2||m===5){g.fillStyle=col.muted;g.textAlign="center";g.textBaseline="top";g.fillText(fmtTickHz(v),px,T+ph+6);}}
-  for(let v=G0;v<=G1;v+=6){const py=Yg(v);g.strokeStyle=col.grid;g.lineWidth=v===0?1.6:1;g.beginPath();g.moveTo(L,py);g.lineTo(L+pw,py);g.stroke();g.lineWidth=1;
-    if(v%12===0){g.fillStyle=col.muted;g.textBaseline="middle";g.textAlign="left";g.fillText((v>0?"+":"")+v,L+pw+6,py);g.textAlign="right";g.fillText(String(-40+v*90/54),L-6,py);}}
-  g.fillStyle=col.muted;g.textAlign="left";g.textBaseline="top";g.fillText("canción (dB)",L+4,T+2);g.textAlign="right";g.fillText("filtros (dB)",L+pw-4,T+2);
-  g.save();g.beginPath();g.rect(L,T,pw,ph);g.clip();
-  const fs=AC?AC.sampleRate:48000;
-  const colsOf=arr=>{if(!arr)return null;const n=arr.length,out=new Float32Array(Math.ceil(pw)+1).fill(-200);
-    for(let px=0;px<=pw;px++){const fa=Fx(L+px-.5),fb=Fx(L+px+.5);let ka=Math.floor(fa/(fs/2)*n),kb=Math.ceil(fb/(fs/2)*n);ka=clamp(ka,1,n-1);kb=clamp(Math.max(kb,ka+1),1,n);
-      let m=-200;for(let k=ka;k<kb;k++)m=Math.max(m,arr[k]);if(kb-ka<=1){const fk=(fa+fb)/2/(fs/2)*n,k0=Math.floor(fk),fr=fk-k0;m=arr[clamp(k0,0,n-1)]*(1-fr)+arr[clamp(k0+1,0,n-1)]*fr;}out[px]=m;}return out};
-  const ci=colsOf(qSpecIn),co=colsOf(qSpecOut);
-  if(co){g.beginPath();g.moveTo(L,T+ph);for(let px=0;px<=pw;px++)g.lineTo(L+px,Ys(clamp(co[px],-130,0)));g.lineTo(L+pw,T+ph);g.closePath();g.fillStyle=col.out;g.globalAlpha=.22;g.fill();g.globalAlpha=1;
-    g.beginPath();for(let px=0;px<=pw;px++){const y=Ys(clamp(co[px],-130,0));px?g.lineTo(L+px,y):g.moveTo(L,y);}g.strokeStyle=col.out;g.lineWidth=1.4;g.stroke();}
-  if(ci){g.beginPath();for(let px=0;px<=pw;px++){const y=Ys(clamp(ci[px],-130,0));px?g.lineTo(L+px,y):g.moveTo(L,y);}g.strokeStyle=col.inc;g.globalAlpha=.65;g.lineWidth=1;g.stroke();g.globalAlpha=1;}
-  const c=qCalc(),NP=420,fr=[...Array(NP)].map((_,i)=>x0*(x1/x0)**(i/(NP-1)));
-  const bypass=QS.mode==="A";
-  for(const b of ["lo","mid","hi"]){if(!c.k[b])continue;g.beginPath();fr.forEach((f,i)=>{const hh=bandH(b,f),y=Yg(clamp(db(c.k[b]*Math.hypot(hh[0],hh[1])),G0-20,G1+20));i?g.lineTo(X(f),y):g.moveTo(X(f),y)});
-    g.strokeStyle=BB[b];g.lineWidth=2;g.globalAlpha=bypass?.3:.95;g.setLineDash([6,4]);g.stroke();g.setLineDash([]);g.globalAlpha=1;}
-  g.beginPath();fr.forEach((f,i)=>{const y=Yg(clamp(bypass?0:db(totalH(f,c)),G0-20,G1+20));i?g.lineTo(X(f),y):g.moveTo(X(f),y)});g.strokeStyle=col.fg;g.lineWidth=3;g.stroke();
-  if(bypass){g.fillStyle=col.fg;g.textAlign="left";g.textBaseline="bottom";g.fillText("A · original: la señal no pasa por los filtros",L+8,Yg(0)-4);}
-  for(const b of ["lo","mid","hi"]){const px=X(QS[b].f0);g.fillStyle=BB[b];g.beginPath();g.moveTo(px-6,T);g.lineTo(px+6,T);g.lineTo(px,T+9);g.closePath();g.fill();g.textAlign="center";g.textBaseline="top";g.fillText("f0 "+fmtF(QS[b].f0),clamp(px,L+40,L+pw-40),T+11);}
-  if(qCursor){const px=X(qCursor);g.strokeStyle=col.fg;g.setLineDash([2,3]);g.beginPath();g.moveTo(px,T);g.lineTo(px,T+ph);g.stroke();g.setLineDash([]);
-    if(!bypass){g.fillStyle=col.fg;g.beginPath();g.arc(px,Yg(clamp(db(totalH(qCursor,c)),G0,G1)),4,0,7);g.fill();}}
-  g.restore();
-  qAx={L,pw,Fx,co};
-}
-function qReadout(){const el=$("#q-read");if(!qCursor){el.textContent="Pasa el cursor sobre la gráfica para leer la frecuencia, el nivel de la canción y la ganancia de cada banda.";return}
-  const c=qCalc(),f=qCursor,bd=b=>c.k[b]?fmtDb(db(c.k[b]*Math.hypot(...bandH(b,f)))):"apagado";
-  let lvl="";if(qAx&&qAx.co){const px=Math.round((Math.log10(f/20)/3)*qAx.pw);const v=qAx.co[clamp(px,0,qAx.co.length-1)];if(v>-190)lvl=` · canción ${fmtNum(v,3)} dB`;}
-  el.innerHTML=`<b>${fmtF(f)}</b>${noteOf(f)?` (≈ ${noteOf(f)})`:""}${lvl} · <span style="color:${BC.lo}">graves ${bd("lo")}</span> · <span style="color:${BC.mid}">medios ${bd("mid")}</span> · <span style="color:${BC.hi}">agudos ${bd("hi")}</span> · <b>total ${QS.mode==="A"?"0 dB (original)":fmtDb(db(totalH(f,c)))}</b>`;}
-
-/* ---------- esquemas en vivo ---------- */
-const rad=x=>`<span class="rad"><span class="ri">${x}</span></span>`,fr=(a,b)=>`<span class="frac"><span>${a}</span><span>${b}</span></span>`;
-function potZig(x1,y,x2,lab,val,color){const xm=(x1+x2)/2;return W(zig(x1,y,x2))+`<path class="w" d="M${xm-22},${y+16} L${xm+20},${y-16}"/><path d="M${xm+20},${y-16} L${xm+8},${y-14} L${xm+16},${y-6} Z" fill="currentColor" style="fill:var(--text)"/>`+T(xm-14,y-20,lab,"lab")+T(x1-4,y+30,val)}
-function sumSchem(c){const ys={lo:50,mid:130,hi:210},nm={lo:"V_G",mid:"V_M",hi:"V_A"},pn={lo:"PG",mid:"PM",hi:"PA"};let s="";
-  for(const b of ["lo","mid","hi"]){const y=ys[b];s+=`<circle cx="30" cy="${y}" r="7" fill="${BC[b]}"/>`+T(14,y-14,nm[b],"sig")+W(`M37,${y} L70,${y}`)+potZig(70,y,150,pn[b],c.k[b]?fmtSI(c.P[b],"Ω"):"∞ (abierta)")+W(`M150,${y} L240,${y}`)+dot(240,y);}
-  s+=W("M240,50 L240,210")+W("M240,110 L300,110")+dot(270,110)+W("M300,150 L285,150 L285,172")+gnd(285,172)+opamp(300,110)
-   +W("M270,110 L270,22 L320,22")+W(zig(320,22,400))+T(348,12,"Rf","lab")+T(334,48,"10 kΩ")+W("M400,22 L430,22 L430,130")+W("M390,130 L470,130")+dot(430,130)+term(476,130)+T(466,114,"Vo","sig");
-  return svg(520,250,"Sumador inversor",s).replace('style="min-width:420px"','');}
-let qSchT=0;
-function qSchems(){cancelAnimationFrame(qSchT);qSchT=requestAnimationFrame(()=>{const c=qCalc(),box=$("#q-schems");if(!box||$("#p-int").hidden)return;
-  const f0l=QS.lo.f0,f0m=QS.mid.f0,f0h=QS.hi.f0,Qm=QS.mid.Q;
-  box.innerHTML=`
-  <div class="ibox" style="--bc:${BC.lo}"><h3>Graves · Sallen-Key pasa-bajas (seguidor, K = 1)</h3>${FILTERS.sk.schem({R1:c.lo.R,R2:c.lo.R,C1:QC.C1g,C2:QC.C2g})}
-   <div class="eq">R = ${fr("1","2π·f0·"+rad("C1·C2"))} = ${fr("1","2π·"+fmtNum(f0l,4)+"·"+rad("47n·22n"))} = <span class="res">${fmtSI(c.lo.R,"Ω")}</span></div>
-   <div class="eq">Q = ½·${rad(fr("C1","C2"))} = ½·${rad(fr("47n","22n"))} = <span class="res">${fmtNum(QLO,3)}</span> <span class="note">(casi Butterworth, fijo)</span></div></div>
-  <div class="ibox" style="--bc:${BC.mid}"><h3>Medios · pasa-banda MFB (ganancia −1 en f0)</h3>${FILTERS.bp.schem({R1:c.mid.R1,R2:c.mid.R2,R3:c.mid.R3,C:QC.Cm})}
-   <div class="eq">R3 = ${fr("2·Q","2π·f0·C")} = ${fr("2·"+fmtNum(Qm,3),"2π·"+fmtNum(f0m,4)+"·10n")} = <span class="res">${fmtSI(c.mid.R3,"Ω")}</span></div>
-   <div class="eq">R1 = ${fr("R3","2")} = <span class="res">${fmtSI(c.mid.R1,"Ω")}</span></div><div class="eq">R2 = ${fr("R1","2·Q² − 1")} = ${fr(fmtSI(c.mid.R1,"Ω"),"2·"+fmtNum(Qm,3)+"² − 1")} = <span class="res">${fmtSI(c.mid.R2,"Ω")}</span></div></div>
-  <div class="ibox" style="--bc:${BC.hi}"><h3>Agudos · Sallen-Key pasa-altas (seguidor, K = 1)</h3>${FILTERS.skhp.schem({R1:c.hi.R1,R2:c.hi.R2,C1:QC.Ca,C2:QC.Ca})}
-   <div class="eq">R1 = ${fr("1","2π·f0·C·"+rad("2"))} = ${fr("1","2π·"+fmtNum(f0h,4)+"·4,7n·"+rad("2"))} = <span class="res">${fmtSI(c.hi.R1,"Ω")}</span></div><div class="eq">R2 = 2·R1 = <span class="res">${fmtSI(c.hi.R2,"Ω")}</span></div>
-   <div class="eq">Q = ½·${rad(fr("R2","R1"))} = ½·${rad("2")} = <span class="res">0,707</span> <span class="note">(Butterworth)</span></div></div>
-  <div class="ibox" style="--bc:${BC.ms}"><h3>Sumador inversor: aquí se juntan las tres bandas</h3>${sumSchem(c)}
-   <div class="eq">Vo = −(${fr("Rf","PG")}·<span class="vs">V<sub>G</sub></span> + ${fr("Rf","PM")}·<span class="vs">V<sub>M</sub></span> + ${fr("Rf","PA")}·<span class="vs">V<sub>A</sub></span>)</div><div class="eq">Vo = −(${fmtNum(c.k.lo,3)}·<span class="vs">V<sub>G</sub></span> + ${fmtNum(c.k.mid,3)}·<span class="vs">V<sub>M</sub></span> + ${fmtNum(c.k.hi,3)}·<span class="vs">V<sub>A</sub></span>)</div>
-   <p class="note">Cada fader mueve una perilla P: ganancia en dB = 20·log(Rf/P). Subir +6 dB es bajar P a la mitad (5 kΩ). Si la suma pasa de la alimentación, el AO se satura y la señal se recorta: el volumen del parlante está después y no lo arregla.</p></div>`;});}
-
-/* ---------- ajustes, encargos y hoja ---------- */
-function qSet(o){for(const b of ["lo","mid","hi"]){if(o[b])Object.assign(QS[b],o[b]);QS[b].m=false;QS[b].s=false;}if("hum" in o){QS.hum=o.hum;$("#q-hum").checked=o.hum;}if("hiss" in o){QS.hiss=o.hiss;$("#q-hiss").checked=o.hiss;}qChanged();}
-const QPRE=[
- {n:"Plano",s:{lo:{f0:250,g:0},mid:{f0:1000,Q:1,g:0},hi:{f0:4000,g:0}}},
- {n:"Más graves",s:{lo:{f0:120,g:6},mid:{f0:1000,Q:1,g:0},hi:{f0:4000,g:0}}},
- {n:"Voz al frente",s:{lo:{f0:250,g:-3},mid:{f0:2000,Q:1.5,g:6},hi:{f0:4000,g:0}}},
- {n:"Teléfono",s:{lo:{f0:250,g:GOFF},mid:{f0:1000,Q:.8,g:6},hi:{f0:4000,g:GOFF}}},
- {n:"Radio vieja",s:{lo:{f0:250,g:-12},mid:{f0:1500,Q:1.2,g:3},hi:{f0:4000,g:GOFF}}}];
-const Rlo=f=>1/(PI2*f*Math.sqrt(QC.C1g*QC.C2g)),Rhi=f=>1/(PI2*f*QC.Ca*Math.SQRT2),R3m=(f,Q)=>2*Q/(PI2*f*QC.Cm),Pdb=g=>QC.Rf/10**(g/20);
-const QT=[
- {tag:"Mitigar · grabación en vivo",title:"Salsa en vivo: la tarima retumba y zumba",
-  songs:[["Joe Arroyo y La Verdad","La rebelión","versión en vivo"],["Grupo Niche","Cali pachanguero","versión en vivo"]],
-  text:"Te llega la grabación de un concierto. El micrófono quedó cerca del bajo y la tarima tenía la tierra mal conectada: se oye un retumbe en los graves y un zumbido constante.",
-  steps:["Activa «Zumbido de 60 Hz», reproduce y pon el cursor sobre los picos angostos del espectro de entrada. Anota sus frecuencias.","Para quitar el retumbe, baja la frecuencia de graves a f0 = 80 Hz y el fader de graves a −9 dB. Calcula R1 = R2 del canal de graves y la perilla PG.","Escucha A/B. ¿Desapareció el zumbido? Piensa por qué no basta con la consola."],
-  inputs:[{k:"R",label:"R graves para 80 Hz (Ω)",ans:Rlo(80)},{k:"P",label:"PG para −9 dB (Ω)",ans:Pdb(-9)},{k:"N",label:"R1 del rechaza-banda de 60 Hz con Q = 5 y C = 100 nF (Ω)",ans:5/(PI2*60*100e-9)}],
-  sol:()=>`Picos en 60, 120 y 180 Hz. R = 1/(2π·80·√(47n·22n)) = ${fmtSI(Rlo(80),"Ω")}. PG = 10 kΩ/10<sup>−9/20</sup> = ${fmtSI(Pdb(-9),"Ω")}. El pasa-bajas atenúa <b>todos</b> los graves por igual, así que el zumbido baja junto con el bajo y el bombo. Para quitar solo 60 Hz se pone antes de la consola el rechaza-banda de la Clase 12: R1 = Q/(2π·f0·C) = ${fmtSI(5/(PI2*60*100e-9),"Ω")}, R3 = 2·R1 y R2 = R1/(2Q² − 1) = ${fmtSI(5/(PI2*60*100e-9)/49,"Ω")}.`,
-  set:{hum:true,hiss:false,lo:{f0:80,g:-9},mid:{f0:1000,Q:1,g:0},hi:{f0:4000,g:0}}},
- {tag:"Remasterizar · disco antiguo",title:"Cumbia de los años 50: quitar el siseo del acetato",
-  songs:[["Lucho Bermúdez","Colombia tierra querida",""],["Pedro Salcedo y su orquesta","La pollera colorá",""]],
-  text:"La disquera quiere relanzar una cumbia grabada en acetato. Tiene siseo en los agudos y el clarinete y la voz suenan apagados.",
-  steps:["Activa «Siseo de disco viejo» y ubica en el espectro desde qué frecuencia domina el ruido.","Sube la frecuencia de agudos a 6 kHz y baja su fader a −12 dB. Calcula R1 de agudos y PA.","Para dar presencia al clarinete: medios en f0 = 2 kHz, Q = 1,5 y +4 dB. Calcula R3 y R2 de medios."],
-  inputs:[{k:"Ra",label:"R1 agudos para 6 kHz (Ω)",ans:Rhi(6000)},{k:"Pa",label:"PA para −12 dB (Ω)",ans:Pdb(-12)},{k:"R3",label:"R3 medios (Ω)",ans:R3m(2000,1.5)},{k:"R2",label:"R2 medios (Ω)",ans:R3m(2000,1.5)/2/(2*1.5**2-1)}],
-  sol:()=>`R1 = 1/(2π·6000·4,7n·√2) = ${fmtSI(Rhi(6000),"Ω")} y R2 = ${fmtSI(2*Rhi(6000),"Ω")}. PA = 10 kΩ/10<sup>−12/20</sup> = ${fmtSI(Pdb(-12),"Ω")}. Medios: R3 = 2·1,5/(2π·2000·10n) = ${fmtSI(R3m(2000,1.5),"Ω")}, R1 = R3/2 = ${fmtSI(R3m(2000,1.5)/2,"Ω")}, R2 = R1/(2·1,5² − 1) = ${fmtSI(R3m(2000,1.5)/7,"Ω")}. PM para +4 dB = ${fmtSI(Pdb(4),"Ω")}. Ojo: bajar los agudos también quita el brillo de los platillos; es un compromiso.`,
-  set:{hiss:true,hum:false,lo:{f0:250,g:0},mid:{f0:2000,Q:1.5,g:4},hi:{f0:6000,g:-12}}},
- {tag:"Amplificar · graves",title:"Electrónica: más bajo para el sound system",
-  songs:[["Bomba Estéreo","Fuego",""],["Systema Solar","Mi kumbia",""]],
-  text:"Un DJ va a tocar en una plaza y quiere que el bajo «pegue» más sin tocar la voz.",
-  steps:["Pon la frecuencia de graves en 120 Hz y su fader en +6 dB. Calcula R y PG. ¿Cuántas veces amplifica el canal?","Ahora sube los tres faders a +12 dB y reproduce. ¿Qué indica el LED del sumador y cómo suena?","Baja el volumen del parlante. ¿Se arregla la distorsión? Explica con el circuito."],
-  inputs:[{k:"R",label:"R graves para 120 Hz (Ω)",ans:Rlo(120)},{k:"P",label:"PG para +6 dB (Ω)",ans:Pdb(6)},{k:"k",label:"k = Rf/PG (veces)",ans:10**(6/20)}],
-  sol:()=>`R = 1/(2π·120·√(47n·22n)) = ${fmtSI(Rlo(120),"Ω")}. +6 dB es k = 10<sup>6/20</sup> ≈ 2, así que PG = 10 kΩ/2 ≈ ${fmtSI(Pdb(6),"Ω")}. Con +12 dB en las tres bandas la suma supera la alimentación del AO sumador: se satura y recorta la onda (distorsión). El volumen del parlante está después del AO: baja el nivel pero el recorte ya ocurrió. La solución es bajar las ganancias (subir las P).`,
-  set:{hum:false,hiss:false,lo:{f0:120,g:6},mid:{f0:1000,Q:1,g:0},hi:{f0:4000,g:0}}},
- {tag:"Amplificar · voz",title:"Vallenato: la voz se pierde detrás del acordeón",
-  songs:[["Carlos Vives","La gota fría",""],["Diomedes Díaz","Sin medir distancias",""]],
-  text:"En la mezcla el acordeón tapa la voz. La inteligibilidad de la voz está entre 1 y 3 kHz; hay que realzarla sin subir todo el acordeón.",
-  steps:["Medios en f0 = 1,5 kHz con Q = 2 y fader en +6 dB. ¿Qué ancho de banda realzas?","Calcula R3, R1 y R2 del pasa-banda MFB.","Compara con Q = 0,8: ¿qué pasa con el acordeón?"],
-  inputs:[{k:"BW",label:"Ancho de banda (Hz)",ans:750},{k:"R3",label:"R3 (Ω)",ans:R3m(1500,2)},{k:"R1",label:"R1 (Ω)",ans:R3m(1500,2)/2},{k:"R2",label:"R2 (Ω)",ans:R3m(1500,2)/2/7}],
-  sol:()=>`BW = f0/Q = 1500/2 = 750 Hz. R3 = 2·2/(2π·1500·10n) = ${fmtSI(R3m(1500,2),"Ω")}, R1 = R3/2 = ${fmtSI(R3m(1500,2)/2,"Ω")}, R2 = R1/(2·2² − 1) = ${fmtSI(R3m(1500,2)/14,"Ω")}. PM = ${fmtSI(Pdb(6),"Ω")}. Con Q = 0,8 la campana mide ${fmtF(1500/.8)} de ancho y sube también buena parte del acordeón.`,
-  set:{hum:false,hiss:false,lo:{f0:250,g:0},mid:{f0:1500,Q:2,g:6},hi:{f0:4000,g:0}}},
- {tag:"Efecto · límites del diseño",title:"Efecto teléfono para la intro",
-  songs:[["Joe Arroyo","En Barranquilla me quedo","intro"],["Cualquier canción","de tu gusto",""]],
-  text:"El productor quiere que la intro suene «por teléfono»: solo la banda de 300 Hz a 3,4 kHz.",
-  steps:["Calcula la frecuencia central f0 = √(f1·f2) y el factor Q = f0/(f2 − f1) que pediría esa banda.","Con ese Q, calcula 2Q² − 1. ¿Se puede armar con el pasa-banda MFB de la consola?","Usa lo más cercano: deja solo medios (botón S), f0 ≈ 1 kHz y Q = 0,8. Escucha."],
-  inputs:[{k:"f0",label:"f0 (Hz)",ans:Math.sqrt(300*3400)},{k:"Q",label:"Q",ans:Math.sqrt(300*3400)/3100}],
-  sol:()=>`f0 = √(300·3400) = ${fmtF(Math.sqrt(300*3400))} y Q = ${fmtNum(Math.sqrt(300*3400),4)}/3100 = ${fmtNum(Math.sqrt(300*3400)/3100,3)}. Entonces 2Q² − 1 = ${fmtNum(2*(Math.sqrt(300*3400)/3100)**2-1,3)} &lt; 0 y R2 saldría negativa: el MFB con ganancia −1 solo funciona con Q &gt; 0,707. Para una banda tan ancha se ponen en cascada un pasa-altas de 300 Hz y un pasa-bajas de 3,4 kHz.`,
-  set:{hum:false,hiss:false,lo:{f0:250,g:0},mid:{f0:1010,Q:.8,g:6},hi:{f0:4000,g:0},solo:"mid"}},
- {tag:"Proyecto libre",title:"Tu canción, tu mezcla",
-  songs:[["Tú eliges","salsa, cumbia, champeta, vallenato, electrónica, rock…",""]],
-  text:"Escoge una canción, encuentra algo que mejorarías (un zumbido, graves que retumban, una voz apagada, demasiado brillo) y corrígelo.",
-  steps:["Describe el problema y en qué frecuencia lo ves en el espectro.","Ajusta la consola y justifica f0, Q y la ganancia de cada banda.","Genera la hoja de diseño (abajo) y entrégala con tu explicación y la comparación A/B."],
-  inputs:[],sol:()=>"No hay una única respuesta: se evalúa que el problema esté bien identificado y que las resistencias correspondan a tus ajustes.",set:null}];
-function renderTasks(){const box=$("#q-tasks");box.innerHTML="";
-  QT.forEach((t,i)=>{const el=document.createElement("article");el.className="panel task";
-    el.innerHTML=`<header><span class="tag">Encargo ${i+1} · ${t.tag}</span><h3>${t.title}</h3></header><p>${t.text}</p>
-     <div class="songs">${t.songs.map(s=>`<span class="song"><b>${s[0]}</b> · ${s[1]}${s[2]?` (${s[2]})`:""}</span>`).join("")}</div>
-     <ol>${t.steps.map(s=>`<li>${s}</li>`).join("")}</ol>
-     ${t.inputs.length?`<div class="fields">${t.inputs.map(q=>`<label class="fld">${q.label}<input type="text" id="qt${i}-${q.k}" autocomplete="off"></label>`).join("")}</div>`:""}
-     <div class="row">${t.inputs.length?'<button class="btn" data-a="check">Verificar</button>':""}${t.set?'<button class="btn ghost" data-a="set">Poner la consola como pide el encargo</button>':""}</div>
-     <div class="verdict" aria-live="polite"></div><details><summary>Ver solución</summary><p class="note" style="margin-top:6px">${t.sol()}</p></details>`;
-    const ck=el.querySelector('[data-a="check"]');if(ck)ck.onclick=()=>{const vd=el.querySelector(".verdict");
-      vd.innerHTML=t.inputs.map(q=>{const v=parseSI($(`#qt${i}-${q.k}`).value);if(!isFinite(v))return `<div class="v"><span class="pill warn">Falta</span>${q.label}</div>`;
-        const ok=relErr(v,q.ans)<=.03;return `<div class="v"><span class="pill ${ok?"ok":"bad"}">${ok?"Correcto":"Revisa"}</span>${q.label}</div>`}).join("");};
-    const st=el.querySelector('[data-a="set"]');if(st)st.onclick=()=>{qSet(t.set);if(t.set.solo){QS[t.set.solo].s=true;qChanged();}$("#console").scrollIntoView({behavior:"smooth",block:"start"});};
-    box.appendChild(el);});}
-function qSheet(){const c=qCalc(),ln=[];
-  ln.push("HOJA DE DISEÑO · ECUALIZADOR DE TRES BANDAS",`Canción: ${qName||"(sin cargar)"}`,"");
-  ln.push(`GRAVES  Sallen-Key pasa-bajas (K = 1)   f0 = ${fmtF(QS.lo.f0)}   Q = ${fmtNum(QLO,3)}`,`        C1 = 47 nF, C2 = 22 nF, R1 = R2 = ${fmtSI(c.lo.R,"Ω")}`,`        ganancia ${QS.lo.g<=GOFF?"apagado":fmtDb(QS.lo.g)}  →  PG = ${QS.lo.g<=GOFF?"∞":fmtSI(c.P.lo,"Ω")}${QS.lo.m?"  [silenciado]":""}`,"");
-  ln.push(`MEDIOS  Pasa-banda MFB (G = −1)   f0 = ${fmtF(QS.mid.f0)}   Q = ${fmtNum(QS.mid.Q,3)}   BW = ${fmtF(c.mid.BW)}`,`        C = 10 nF, R3 = ${fmtSI(c.mid.R3,"Ω")}, R1 = ${fmtSI(c.mid.R1,"Ω")}, R2 = ${fmtSI(c.mid.R2,"Ω")}`,`        ganancia ${QS.mid.g<=GOFF?"apagado":fmtDb(QS.mid.g)}  →  PM = ${QS.mid.g<=GOFF?"∞":fmtSI(c.P.mid,"Ω")}${QS.mid.m?"  [silenciado]":""}`,"");
-  ln.push(`AGUDOS  Sallen-Key pasa-altas (K = 1)   f0 = ${fmtF(QS.hi.f0)}   Q = 0,707`,`        C1 = C2 = 4,7 nF, R1 = ${fmtSI(c.hi.R1,"Ω")}, R2 = ${fmtSI(c.hi.R2,"Ω")}`,`        ganancia ${QS.hi.g<=GOFF?"apagado":fmtDb(QS.hi.g)}  →  PA = ${QS.hi.g<=GOFF?"∞":fmtSI(c.P.hi,"Ω")}${QS.hi.m?"  [silenciado]":""}`,"");
-  ln.push(`SUMADOR inversor, Rf = 10 kΩ:  Vo = −(${fmtNum(c.k.lo,3)}·V_G + ${fmtNum(c.k.mid,3)}·V_M + ${fmtNum(c.k.hi,3)}·V_A)`);
-  ln.push(`Problemas simulados: ${[QS.hum?"zumbido 60 Hz":"",QS.hiss?"siseo":""].filter(Boolean).join(", ")||"ninguno"}`);
-  return ln.join("\n");}
-
-/* ---------- arranque del integrador ---------- */
-function qChanged(){if(!qBuilt)return;const c=qCalc();paintConsole(c);qApply();if(!qPlaying)drawQ();qReadout();qSchems();}
-function qInit(){
-  if(qBuilt)return;buildConsole();renderTasks();
-  const pb=$("#q-presets");QPRE.forEach(p=>{const b=document.createElement("button");b.className="chip";b.textContent=p.n;b.onclick=()=>qSet(p.s);pb.appendChild(b);});
-  $("#q-demo").onclick=qDemo;
-  $("#q-file").onchange=async e=>{const f=e.target.files[0];if(!f)return;qStatus("Leyendo el archivo…");
-    try{const b=await ac().decodeAudioData(await f.arrayBuffer());qSetBuf(b,f.name.replace(/\.[^.]+$/,""));}catch(err){qStatus("No se pudo leer ese archivo. Prueba con MP3, WAV u OGG.",true)}e.target.value="";};
-  $("#q-play").onclick=()=>qPlaying?qPause():qPlay();
-  const sk=$("#q-seek");sk.addEventListener("input",()=>{qSeeking=true;if(qBuf)$("#q-time").textContent=`${qClock(sk.value/1000*qBuf.duration)} / ${qClock(qBuf.duration)}`;});
-  sk.addEventListener("change",()=>{qSeeking=false;if(!qBuf)return;const was=qPlaying;qPause();qOffset=sk.value/1000*qBuf.duration;if(was)qPlay();else qTime();});
-  $("#q-loop").onchange=()=>{if(qSrc)qSrc.loop=$("#q-loop").checked;};
-  const mode=m=>{QS.mode=m;$("#q-a").setAttribute("aria-pressed",String(m==="A"));$("#q-b").setAttribute("aria-pressed",String(m==="B"));qChanged();};
-  $("#q-a").onclick=()=>mode("A");$("#q-b").onclick=()=>mode("B");
-  $("#q-hum").onchange=e=>{QS.hum=e.target.checked;qChanged();};$("#q-hiss").onchange=e=>{QS.hiss=e.target.checked;qChanged();};
-  $("#q-humv").oninput=e=>{QS.humv=+e.target.value;qApply();};$("#q-hissv").oninput=e=>{QS.hissv=+e.target.value;qApply();};
-  const cv=$("#q-spec");cv.addEventListener("pointermove",e=>{if(!qAx)return;const r=cv.getBoundingClientRect(),px=e.clientX-r.left;if(px<qAx.L||px>qAx.L+qAx.pw){qCursor=null}else qCursor=qAx.Fx(px);if(!qPlaying)drawQ();qReadout();});
-  cv.addEventListener("pointerleave",()=>{qCursor=null;if(!qPlaying)drawQ();qReadout();});
-  $("#q-sheet").onclick=()=>{const t=qSheet(),bx=$("#q-sheetbox");bx.textContent=t;bx.hidden=false;$("#q-copy").disabled=false;$("#q-copyst").textContent="";};
-  $("#q-copy").onclick=async()=>{const t=$("#q-sheetbox").textContent;try{await navigator.clipboard.writeText(t);$("#q-copyst").textContent="Copiada.";}
-    catch(e){const r=document.createRange();r.selectNodeContents($("#q-sheetbox"));const s=getSelection();s.removeAllRanges();s.addRange(r);$("#q-copyst").textContent="Selecciónala y cópiala con Ctrl+C / Cmd+C.";}};
-  qChanged();
-}
-function qShow(){qInit();qChanged();drawQ();}
-
 /* ---------- navegación ---------- */
 let practice=null;
 function setPractice(p){
   if(p===practice&&p!==null)return;
-  if(practice==="int"&&p!=="int")qPause();
   practice=p;
   document.querySelectorAll(".chip[data-p]").forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.p===p)));
   document.querySelectorAll(".chip[data-f]").forEach(b=>b.setAttribute("aria-pressed",String(!p&&b.dataset.f===state.f)));
-  $(".tabs").hidden=!!p;$("#p-ej").hidden=p!=="ej";$("#p-int").hidden=p!=="int";
+  $(".tabs").hidden=!!p;$("#p-ej").hidden=p!=="ej";
   try{localStorage.setItem("labfiltros12-mode",p||"")}catch(e){}
-  if(p){document.querySelectorAll("section.pane").forEach(x=>{if(x.id!=="p-ej"&&x.id!=="p-int")x.hidden=true});stopAudio();
-    $("#fsum").textContent=p==="ej"?"Ejercicios: combinan todos los filtros":"Consola de tres bandas";if(p==="int")qShow();}
+  if(p){document.querySelectorAll("section.pane").forEach(x=>{if(x.id!=="p-ej")x.hidden=true});stopAudio();
+    $("#fsum").textContent="Ejercicios: combinan todos los filtros";}
   else{selectTab(curTab);summary();}
 }
 document.querySelectorAll(".chip[data-p]").forEach(b=>b.onclick=()=>setPractice(b.dataset.p));
@@ -1269,13 +795,13 @@ function summary(){const c=current(),f=F();if(!c){$("#fsum").textContent="valore
   $("#fsum").textContent=f.type==="lp"||f.type==="hp"?(f.fl==="fc"?`fc ${fmtHz(c.r.fc)} · K ${fmtNum(c.r.K)}`:`f0 ${fmtHz(c.r.f0)} · Q ${fmtNum(c.r.Q)}`):`f0 ${fmtHz(c.r.f0)} · Q ${fmtNum(c.r.Q)} · BW ${fmtHz(c.r.BW)}`;}
 let tmr=0;
 function onFilterChange(now){drawSchem();summary();$("#verdict").innerHTML="";$("#steps").hidden=true;document.querySelectorAll("#preds input").forEach(i=>i.classList.remove("ok","bad"));clearTimeout(tmr);tmr=setTimeout(refreshVisible,now?0:250);}
-function refreshVisible(){if(practice){if(practice==="int")drawQ();return}if(curTab==="t-bode")renderBode();else if(curTab==="t-sen")renderSignals();else if(curTab==="t-aud")processAudio();}
+function refreshVisible(){if(practice)return;if(curTab==="t-bode")renderBode();else if(curTab==="t-sen")renderSignals();else if(curTab==="t-aud")processAudio();}
 $("#btn-check").onclick=checkPreds;$("#btn-show").onclick=showSteps;
 window.addEventListener("resize",()=>{clearTimeout(tmr);tmr=setTimeout(refreshVisible,150)});
 const mq=window.matchMedia("(prefers-color-scheme: dark)");mq.addEventListener&&mq.addEventListener("change",refreshVisible);
 new MutationObserver(refreshVisible).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
 
-/* arranque: #lp1 #hp1 #sk #skhp #bp #notch eligen filtro; #diseno #bode #senales #audio eligen pestaña; #ejercicios #integrador abren la práctica */
+/* arranque: #lp1 #hp1 #sk #skhp #bp #notch eligen filtro; #diseno #bode #senales #audio eligen pestaña; #ejercicios abre la práctica */
 const hash=(location.hash||"").slice(1);
 if(FILTERS[hash])setFilter(hash);
 renderDesign();renderAEx();newExercises();summary();applyPreset(FILTERS[hash]?.type==="hp"?"mic":FILTERS[hash]?.type==="bs"?"hum":"tono");
@@ -1283,6 +809,6 @@ const tabByHash=[...document.querySelectorAll(".tab")].find(t=>t.dataset.h===has
 let saved=null;try{saved=localStorage.getItem("labfiltros12-tab")}catch(e){}
 selectTab(tabByHash?tabByHash.id:(saved&&document.getElementById(saved)?saved:"t-dis"));
 let savedMode=null;try{savedMode=localStorage.getItem("labfiltros12-mode")}catch(e){}
-const modeByHash=hash==="ejercicios"?"ej":hash==="integrador"?"int":null;
-if(modeByHash||(!FILTERS[hash]&&!tabByHash&&savedMode))setPractice(modeByHash||savedMode);
+const modeByHash=hash==="ejercicios"?"ej":null;
+if(modeByHash||(!FILTERS[hash]&&!tabByHash&&savedMode==="ej"))setPractice("ej");
 </script>
