@@ -306,20 +306,19 @@
       <h2 class="section-title">Trabajo práctico 2 y trabajo final</h2>
       <div class="info-grid">
         <div class="info-card" style="background:var(--green-tint);border-color:var(--green-light)">
-          <h3>Trabajo práctico 2 · <span id="tp2-estado">Abre el 30 de noviembre</span></h3>
-          <p>Cuatro retos por equipo para cerrar el capítulo de amplificadores operacionales. Equipos de 1 a 3 personas.</p>
-          <small>Falla en histéresis y generadores · Ingeniería inversa de un filtro · Diseño de filtro de 2.º orden o PI · Diagnóstico de AO real<br>Retos 1 a 3 desde el lunes 30 de noviembre · Reto 4 desde el jueves 10 de diciembre · Cierre: sábado 19 de diciembre, 11:59 p. m. · Procedimiento obligatorio en cada envío</small>
-          <p style="margin-top:14px"><a href="tp2/anuncio-tp2.pdf" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;padding:9px 18px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">📄 Pautas del TP2 (PDF)</a></p>
+          <h3>Trabajo práctico 2 · <span id="tp2-estado">Próximamente</span></h3>
+          <p>Cuatro retos por equipo: diagnosticar, leer un filtro, producir con la consola de audio y controlar. Equipos de 1 a 3 personas.</p>
+          <small>Circuito con falla (histéresis y generadores) · Ingeniería inversa de un filtro · Consola de ecualización (filtros, sumador y luces) · Diseño de un PI<br>Las fechas de apertura y cierre se publican aquí y en la plataforma · Procedimiento obligatorio en cada envío</small>
+          <p style="margin-top:14px"><a href="tp2/pautas-tp2.pdf" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;padding:9px 18px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">📄 Pautas del TP2 (PDF)</a><a href="tp2/practica-taller-tp2.html" target="_blank" rel="noopener" style="display:inline-block;border:1px solid var(--green);color:var(--green);padding:8px 17px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">🛠 Taller: ejercicios tipo reto</a></p>
         </div>
         <div class="info-card">
           <h3>Trabajo final · Proyecto integrador</h3>
           <p>Un problema real resuelto con electrónica analógica. Informe en PDF y sustentación virtual, 50 % cada uno.</p>
-          <small>Se piensa como una cadena de señal: sensor, acondicionamiento, filtro, decisión o control, actuación y alimentación.<br>Se desarrolla con todo el grupo cuando se completen los temas de circuitos integrados especiales y diodos. Ya pueden empezar a buscar su problema.</small>
+          <small>Se piensa como una cadena de señal: sensor, acondicionamiento, filtro, decisión o control, actuación y alimentación.<br>Las pautas traen diez aplicaciones sugeridas, cada una con su sensor, su ruta de desarrollo y un bloque con diodos (apoyo: Clase 14). También pueden proponer otra.</small>
           <p style="margin-top:14px"><a href="tp2/pautas-trabajo-final.pdf" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;padding:9px 18px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">📄 Pautas del trabajo final (PDF)</a><a href="tp2/ficha-ruta-trabajo-final.docx" download style="display:inline-block;border:1px solid var(--green);color:var(--green);padding:8px 17px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">📝 Ficha de ruta de trabajo (Word)</a></p>
         </div>
       </div>
-      <script>(function(){var a=new Date('2026-11-30T00:00:00-05:00'),c=new Date('2026-12-19T23:59:59-05:00'),n=Date.now(),e=document.getElementById('tp2-estado');if(n>c){e.textContent='Cerrado';}else if(n>=a){e.textContent='Abierto';}})();</script>
-    </section>
+          </section>
 
     <section>
       <h2 class="section-title">Datos del curso</h2>
@@ -404,7 +403,7 @@ const UNITS = [
       {c:11, t:"Filtros activos de primer orden y diagramas de Bode", pdf:"clase-11/presentacion.pdf", practica:"clase-11/practica.html", tag:"Laboratorio de filtros"},
       {c:12, t:"Filtros de segundo orden: Sallen-Key, pasa-banda y rechaza-banda", pdf:"clase-12/presentacion.pdf", practica:"clase-12/practica.html", tag:"Laboratorio de filtros", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
       {c:13, t:"Ejercicio integrador: filtros con audio (ecualizador de sonido)", tag:"Laboratorio de audio · en construcción"},
-      {c:14, t:"AO real: impedancia de entrada y de salida, ganancia finita; voltajes y corrientes de offset, compensación"},
+      {c:14, t:"Diodos para el trabajo final: rectificador, filtro capacitivo, Zener, LED, fotodiodo, detector de envolvente, rectificador de precisión y rueda libre", pdf:"clase-14/presentacion.pdf", tag:"Trabajo final"},
       {c:15, t:"AO real: respuesta en frecuencia, producto ganancia-ancho de banda y Slew Rate — cierre del bloque"},
       {c:16, t:"Taller integrador del bloque de amplificadores operacionales en simulación · entrega TP2 (tentativo)", tag:"Taller · simulación"},
     ]
