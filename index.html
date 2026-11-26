@@ -274,21 +274,20 @@
   <div class="wrap">
 
     <div class="today-banner">
-      <div class="badge">12</div>
+      <div class="badge">13</div>
       <div>
         <p>Hoy estás aquí</p>
-        <h2>Clase 12 · Filtros de segundo orden: Sallen-Key, pasa-banda y rechaza-banda</h2>
+        <h2>Clase 13 · Clase integradora: el ecualizador con propósito</h2>
         <div class="links">
-          <a href="clase-12/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
-          <a href="clase-12/practica.html" target="_blank" rel="noopener">🛠 Laboratorio de filtros</a>
-          <a href="https://www.youtube.com/watch?v=9zIU8EqHaDU" target="_blank" rel="noopener">▶ Video: Filtro Sallen-Key</a>
+          <a href="clase-13/presentacion.pdf" target="_blank" rel="noopener">📄 Ver presentación (PDF)</a>
+          <a href="clase-13/practica.html" target="_blank" rel="noopener">🎚 Consola de ecualización</a>
         </div>
       </div>
     </div>
 
     <div class="progress-wrap">
       <div class="progress-track" id="progressTrack"></div>
-      <div class="progress-labels"><span>Clase 1</span><span>Clase 29</span></div>
+      <div class="progress-labels"><span>Clase 1</span><span>Clase 21</span></div>
     </div>
 
     <section id="tp1">
@@ -314,7 +313,7 @@
         <div class="info-card">
           <h3>Trabajo final · Proyecto integrador</h3>
           <p>Un problema real resuelto con electrónica analógica. Informe en PDF y sustentación virtual, 50 % cada uno.</p>
-          <small>Se piensa como una cadena de señal: sensor, acondicionamiento, filtro, decisión o control, actuación y alimentación.<br>Las pautas traen diez aplicaciones sugeridas, cada una con su sensor, su ruta de desarrollo y un bloque con diodos (apoyo: Clase 14). También pueden proponer otra.</small>
+          <small>Se piensa como una cadena de señal: sensor, acondicionamiento, filtro, decisión o control, actuación y alimentación.<br>Las pautas traen diez aplicaciones sugeridas, cada una con su sensor, su ruta de desarrollo y un bloque con diodos (apoyo: clases 16 y 17). También pueden proponer otra.</small>
           <p style="margin-top:14px"><a href="tp2/pautas-trabajo-final.pdf" target="_blank" rel="noopener" style="display:inline-block;background:var(--green);color:#fff;padding:9px 18px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">📄 Pautas del trabajo final (PDF)</a><a href="tp2/ficha-ruta-trabajo-final.docx" download style="display:inline-block;border:1px solid var(--green);color:var(--green);padding:8px 17px;border-radius:9px;text-decoration:none;margin:4px 8px 4px 0">📝 Ficha de ruta de trabajo (Word)</a></p>
         </div>
       </div>
@@ -389,7 +388,7 @@ const UNITS = [
     ]
   },
   {
-    n: 1, title: "Amplificadores operacionales", range: "Clases 2 a 16", color: "#7C9A3E",
+    n: 1, title: "Amplificadores operacionales", range: "Clases 2 a 14", color: "#7C9A3E",
     classes: [
       {c:2, t:"El amplificador operacional ideal: corto virtual y comparador", pdf:"clase-02/presentacion.pdf", practica:"clase-02/practica.html"},
       {c:3, t:"Amplificador inversor y no inversor", pdf:"clase-03/presentacion.pdf", practica:"clase-03/practica.html", videos:[{label:"Amplificador Inversor", url:"https://www.youtube.com/watch?v=O9qs-qSEO5k"}]},
@@ -402,43 +401,35 @@ const UNITS = [
       {c:10, t:"Comparadores con histéresis y generadores de onda", pdf:"clase-10/presentacion.pdf", matlab:"clase-10/practicas_matlab_clase10.zip", tag:"Prácticas en MATLAB (Simulink, R2026b)", videos:[{label:"Comparador con histéresis — desde el min. 55:30", url:"https://www.youtube.com/watch?v=_m87m70yyG4"},{label:"Generador de onda cuadrada", url:"https://www.youtube.com/watch?v=FruOafgJee4"},{label:"Generador de onda triangular a partir de una onda cuadrada — desde el min. 48:17", url:"https://www.youtube.com/watch?v=4qMYbLD5kNw"}]},
       {c:11, t:"Filtros activos de primer orden y diagramas de Bode", pdf:"clase-11/presentacion.pdf", practica:"clase-11/practica.html", tag:"Laboratorio de filtros"},
       {c:12, t:"Filtros de segundo orden: Sallen-Key, pasa-banda y rechaza-banda", pdf:"clase-12/presentacion.pdf", practica:"clase-12/practica.html", tag:"Laboratorio de filtros", videos:[{label:"Filtro Sallen-Key", url:"https://www.youtube.com/watch?v=9zIU8EqHaDU"}]},
-      {c:13, t:"Ejercicio integrador: filtros con audio (ecualizador de sonido)", tag:"Laboratorio de audio · en construcción"},
-      {c:14, t:"Diodos para el trabajo final: rectificador, filtro capacitivo, Zener, LED, fotodiodo, detector de envolvente, rectificador de precisión y rueda libre", pdf:"clase-14/presentacion.pdf", tag:"Trabajo final"},
-      {c:15, t:"AO real: respuesta en frecuencia, producto ganancia-ancho de banda y Slew Rate — cierre del bloque"},
-      {c:16, t:"Taller integrador del bloque de amplificadores operacionales en simulación · entrega TP2 (tentativo)", tag:"Taller · simulación"},
+      {c:13, t:"Clase integradora: el ecualizador con propósito (consola de audio con filtros, sumador y luces)", pdf:"clase-13/presentacion.pdf", practica:"clase-13/practica.html", tag:"Clase integradora · Consola de ecualización"},
+      {c:14, t:"Taller de preparación del TP2 y cierre de la unidad de amplificadores operacionales", tag:"Taller"},
     ]
   },
   {
-    n: 2, title: "Circuitos integrados especiales", range: "Clases 17 a 19", color: "#A2BF53",
+    n: 2, title: "Circuitos integrados especiales", range: "Clase 15", color: "#A2BF53",
     classes: [
-      {c:17, t:"Oscilador LM555: astable y monoestable · se asigna el proyecto final", videos:[{label:"Temporizador", url:"https://www.youtube.com/watch?v=9AxyGA3ywOo&list=PLhtyci7yDIgeIoiFGaHDoKIjzPQN85U-H&index=2"},{label:"Generación PWM mediante 555", url:"https://www.youtube.com/watch?v=n3BwPhnO_JE"}]},
-      {c:18, t:"Conversor de frecuencia a voltaje (LM2907) y modulador de ancho de pulso (SG3524) — cierre del bloque"},
-      {c:19, t:"Práctica de simulación — 555 real y PWM", tag:"Práctica de simulación"},
+      {c:15, t:"Circuitos integrados especiales en una sesión: oscilador LM555 (astable y monoestable), conversor de frecuencia a voltaje LM2907 y modulador PWM SG3524", tag:"Presentación con los videos del profesor Ramos", videos:[{label:"Temporizador", url:"https://www.youtube.com/watch?v=9AxyGA3ywOo&list=PLhtyci7yDIgeIoiFGaHDoKIjzPQN85U-H&index=2"},{label:"Generación PWM mediante 555", url:"https://www.youtube.com/watch?v=n3BwPhnO_JE"}]},
     ]
   },
   {
-    n: 3, title: "Diodos y rectificadores", range: "Clases 20 a 26", color: "#8FAE49",
+    n: 3, title: "Diodos y rectificadores", range: "Clases 16 y 17 + taller del monitor", color: "#8FAE49",
     classes: [
-      {c:20, t:"Física de semiconductores: bandas de energía, unión PN, ecuación de Schockley"},
-      {c:21, t:"Características eléctricas del diodo: recuperación y ruptura inversa"},
-      {c:22, t:"Diodos especiales: Schottky, fotodiodos, LED, Zener"},
-      {c:23, t:"Práctica de simulación — diodos y Zener (recortadores)", tag:"Práctica de simulación"},
-      {c:24, t:"Rectificadores de media onda y onda completa; valor promedio y RMS"},
-      {c:25, t:"Filtro capacitivo, rizado; rectificadores trifásicos — cierre del bloque"},
-      {c:26, t:"Práctica de simulación — rectificadores (media onda, onda completa, trifásico, rizado)", tag:"Práctica de simulación"},
+      {c:16, t:"Diodos I: el diodo real y sus modelos, rectificadores de media onda y onda completa, filtro capacitivo y Zener", pdf:"clase-16/presentacion.pdf", tag:"Diodos para el trabajo final"},
+      {c:17, t:"Diodos II: LED, fotodiodo con conversión I-V, detector de envolvente, rectificador de precisión, diodo de rueda libre y protección de entradas", pdf:"clase-16/presentacion.pdf", tag:"Diodos para el trabajo final"},
+      {c:18, t:"Taller del monitor: ejercicios de diodos aplicados al trabajo final", tag:"Taller del monitor"},
     ]
   },
   {
-    n: "F", title: "Cierre y sustentación", range: "Clases 27 a 29", color: "#6A6E70",
+    n: "F", title: "Cierre y sustentación", range: "Clases 19 a 21", color: "#6A6E70",
     classes: [
-      {c:27, t:"Asesoría de proyecto final en clase"},
-      {c:28, t:"Repaso general integrador (todas las unidades)"},
-      {c:29, t:"Sustentación final de proyectos"},
+      {c:19, t:"Asesoría de proyecto final en clase"},
+      {c:20, t:"Repaso general integrador (todas las unidades)"},
+      {c:21, t:"Sustentación final de proyectos"},
     ]
   },
 ];
 
-const HOY = 12; // clase actual: mueve el resaltado del temario y la barra de progreso
+const HOY = 13; // clase actual: mueve el resaltado del temario y la barra de progreso
 const unitsEl = document.getElementById('units');
 UNITS.forEach((u, idx) => {
   const div = document.createElement('div');
@@ -481,7 +472,7 @@ unitsEl.addEventListener('click', (e) => {
 });
 
 const track = document.getElementById('progressTrack');
-const totalClasses = 29;
+const totalClasses = 21;
 let classColor = {};
 UNITS.forEach(u => u.classes.forEach(cl => classColor[cl.c] = u.color));
 for(let i=1;i<=totalClasses;i++){
